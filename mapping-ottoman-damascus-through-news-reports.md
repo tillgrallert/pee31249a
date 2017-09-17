@@ -4,7 +4,7 @@ author: Till Grallert
 date: 2017-09-17 18:23:28 +0300 
 licence: http://creativecommons.org/licenses/by-nd/4.0/
 ORCID: orcid.org/0000-0002-5739-8094
-DOI: 
+DOI: doi.org/10.5281/zenodo.893613
 markdown: pandoc
 ---
 
@@ -239,7 +239,7 @@ The next step is the actual analysis of whether a certain discourse or a particu
 
 The process involves two steps, both of which are done with XSLT stylesheets:
 
-a. Establishing a sub-sample of references/sources inside the XML research database that meet the criteria, for instance, all sources that contain references to all known forms and derivatives of the Arabic word *shaqī*, e.g. the plural *ashqiyāʾ*, the Ottoman-Turkish variants of *şakī* and *eşḳıyā*, as well as their possible English translations as *brigand*, *rascal*, *wretch*, *villain* etc. Including English translations is necessitated by the imperfections of the research database, as outlined in [section 1.][#sec-sources], which might not contain transliterations in every instance of *ashqiyā*, but only an English summary.[^35]
+a. Establishing a sub-sample of references/sources inside the XML research database that meet the criteria, for instance, all sources that contain references to all known forms and derivatives of the Arabic word *shaqī*, e.g. the plural *ashqiyāʾ*, the Ottoman-Turkish variants of *şakī* and *eşḳıyā*, as well as their possible English translations as *brigand*, *rascal*, *wretch*, *villain* etc. Including English translations is necessitated by the imperfections of the research database, as outlined in [section 1](#sec-sources), which might not contain transliterations in every instance of *ashqiyā*, but only an English summary.[^35]
 b. Establishing the number of references within this subset that refer to any one of the known toponyms for every location of the ontology. This latter step represents some sort of a named entity recognition, insofar as it associates every instance of the strings "Damascus", "Dimashq", "Şām-i şerīf" etc. in the research database (including the geographic tags mentioned above), with the city of Damascus and a combination of values for latitude and longitude (33.5102, 36.29128).[^36] The most simple---although not necessary the most useful---notation of the result would be comma separated values (CSV):
 
     ~~~{.csv}
@@ -341,7 +341,7 @@ These coders specify that a minimal value of 1 report mentioning *ashqiyāʾ* sh
 
 Additional Exhibit views allow us to further explore the data source by limiting the display through various search criteria that might result in a website that looks like this (fig. 12):
 
-![Fig. 12: the final webpage adding various views to the map that allow to browse and limit the displayed data by various criteria](assets/final-website.jpg){#fig-12}
+![Fig. 12: the [final webpage](http://tillgrallert.github.io/MappingOttomanDamascus2014/html/simileMapTableH-ashqiya.html) adding various views to the map that allow to browse and limit the displayed data by various criteria](assets/final-website.jpg){#fig-12}
 
 # Conclusion {#sec-conclusion}
 
