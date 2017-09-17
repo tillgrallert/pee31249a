@@ -341,7 +341,7 @@ These coders specify that a minimal value of 1 report mentioning *ashqiyāʾ* sh
 
 Additional Exhibit views allow us to further explore the data source by limiting the display through various search criteria that might result in a website that looks like this (fig. 12):
 
-![Fig. 12: the final webpage adding various views to the map that allow to browse and limit the displayed data by various criteria](assets/final-website.jpg){#fig-12}
+![Fig. 12: the [final webpage](http://tillgrallert.github.io/MappingOttomanDamascus2014/html/simileMapTableH-ashqiya.html) adding various views to the map that allow to browse and limit the displayed data by various criteria](assets/final-website.jpg){#fig-12}
 
 # Conclusion {#sec-conclusion}
 
