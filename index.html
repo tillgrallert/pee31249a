@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Till Grallert">
+  <title>Mapping Ottoman Damascus through News Reports: A practical approach</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  /* general settings for the whole page */
+  body {
+    background-color: white;
+    color: black;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+    max-width: 800px;
+    min-width: 300px;
+    word-wrap: break-word;
+    /* counters */
+    counter-reset: p;
+  }
+  /* automatic numbering */
+  body > p{
+      counter-increment: p;
+  }
+  body > p:before {
+    content: "§ " counter(p) " ";
+    direction:ltr;
+    vertical-align:top;
+    font-size: 0.8em;
+    color: gray;
+    display: inline-block;
+    position: relative;
+    left: -60px;
+  }
+  /* section headings */
+  h1, h2, h3, h4, h5 {
+    font-family: Optima, sans-serif;
+  }
+  
+  /* spacing / padding between paragraphs */
+  p, ol, ul, li {
+    /*margin-left: 1em;*/
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    line-height: 1.2;
+  }
+  div.footnotes p {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  /* code */
+  code {
+    font-size: 14px;
+    line-height: 1;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  
+  /* images */
+  
+  img {
+    width: 80%;
+    display: block;
+    margin-left: 10%;
+    margin-top: 1em;
+      background-color: rgba(0,0,0,0.04);
+      border-radius: 15px;
+      box-shadow: 2px 2px 5px #000;
+      border:gray solid 1px;
+  }
+  
+  /* what about captions? */
+  /* they are provided in @alt (inline images) and <figcaption/> (images separated by empty lines) */
+  /* if I render HMTL with Pandoc and Marked, images are rendered as <div class="figure">
+  <img src="img0030.jpg" alt="Fig. 1, Construction works at the new municipality." /><p class="caption">Fig. 1, Construction works at the new municipality.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+  </div>
+   */
+  figure, 
+  div.figure {
+      width: 80%;
+      display: block;
+      clear: both;
+      margin-top: 1em;
+      margin-left: 10%;
+    }
+  figure > img, 
+  div.figure img {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
+        background-color: rgba(0,0,0,0.04);
+        border-radius: 15px;
+        box-shadow: 2px 2px 5px #000;
+        border:gray solid 1px;
+    }
+  figcaption,
+  p.caption {
+        width:100%;
+        position:relative;
+        display: block;
+        margin-top: 1em;
+        font-size:0.8em;
+        text-align: right;
+        font-weight:lighter;
+    }   
+    
+  /* tables */
+  
+  table {
+    border-collapse: collapse;
+    width:inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+  }
+  
+  tr.header {
+    border-bottom: double black;
+  }
+  
+  td {
+    border-bottom: 1px solid black;
+    padding-bottom: 0.1em;
+    padding-top: 0.1em;
+  }
+  
+  /* links */
+  
+  a {
+    color: orange;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #AB1733;
+    text-decoration: none;
+  }
+  
+  a:hover, a:active {
+    color: #E62347;
+    text-decoration: underline;
+  }
+  /* footnotes */
+  a.footnote {
+    font-size: 0.7em;
+    vertical-align: super;
+    display: inline-block;
+    padding-left: 0.3em;
+  }
+  /* in case of transcriptions, the html might contain pb elements to indicate page breaks in the original */
+  pb:before {
+      content: " [page " attr(n) "] ";
+      font-size: 0.5em;
+      color:#959595;
+      vertical-align: top;
+      position: relative;
+      display: block;
+      padding: 0.5em;
+    }
+   </style>
+  <style type="text/css">
+  /* these styles mirror oXygen's highlight colours for XML */
+  pre.sourceCode {
+      background-color:white;
+  }
+  code.sourceCode {
+      font-weight:normal;
+  }
+  /* provide a readible font-size */
+  .sourceCode * {
+      font-size: 16px;
+  }
+  /* xml element names */
+  .xml > code > span.kw {
+    color: #0F0F9C;
+    font-weight: bold;
+  }
+  /* xml attribute names */
+  .xml > code > span.ot {
+    color:#FF8041;
+  }
+  /* xml attribute values */
+  .xml > code > span.st {
+    color:#993300;
+  }
+  /* xml comments */
+  .xml > code > span.co {
+    color:#167116;
+    font-style: italic;
+  }
+  /* xml computing instructions: not implemented in Pandoc syntax highlighting */
+  /* .xml > code > span {
+    color:#9132CC;
+  } */
+  </style>
+</head>
+<body>
+<header>
+<h1 class="title">Mapping Ottoman Damascus through News Reports: A practical approach</h1>
+<p class="author">Till Grallert</p>
+<p class="date">2017-09-17 18:23:28 +0300</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#sec-sources">1. Starting from a database of sources</a></li>
+<li><a href="#sec-locations">2. Establishing a list of geocoded locations</a><ul>
+<li><a href="#extracting-the-toponyms-and-organizing-a-hierarchy-of-places">2.1 Extracting the toponyms and organizing a hierarchy of places</a></li>
+<li><a href="#geocoding-the-places">2.2 Geocoding the places</a></li>
+</ul></li>
+<li><a href="#sec-mash-up">3. Mashing up the data</a></li>
+<li><a href="#sec-mapping">4. Visualising / mapping the data</a><ul>
+<li><a href="#the-json-data-source">4.1. The JSON data source</a></li>
+<li><a href="#the-display-widgets">4.2 The display / widgets</a></li>
+</ul></li>
+<li><a href="#sec-conclusion">Conclusion</a></li>
+<li><a href="#bibliography">Bibliography</a></li>
+</ul>
+</nav>
+<h1 id="introduction">Introduction</h1>
+<p>This paper introduces a digital workflow and a set of tools to visually scrutinize possible correlations between certain historical phenomena, discourse, and terminologies on the one hand, and geographical locations on the other by means of browser-based maps that require only minimal prior programming knowledge. The workflow provides historians with a means to quickly check whether references to certain events or certain terms within a large corpus of sources form clusters on a geographic map—as long as the information is available in a somewhat structured and machine-readable form, such as a reference or citation manager.</p>
+<p>While the workflow can be applied to scrutinize the distribution of fires, crimes or road works, it was developed in response to a practical, methodological question of how to investigate the extent to which Damascene and Beiruti newspapers—and particularly the news reports from and about Damascus during the last forty years of Ottoman rule (1875–1914)—perpetuated the state’s discourse on the provision of public order (<em>āsāyış-i ʿumūmī</em> / <em>rāḥat ʿumūmiyya</em>) for generating legitimate Ottoman statehood. Such a study of linguistic strategies used to delegitimize acts of violence and the perpetrators thereof required a methodology to deal with thousands of newspaper articles from seven newspapers of at least weekly publication and six monthly or fortnightly journals. In the course of two years that I spent reading these newspapers for a doctoral thesis on the production of public places and public space in late Ottoman Damascus, I had increasingly come under the impression that a specific terminology for violent challenges to legitimate Ottoman statehood, such as <em>mushājara</em> (quarrel), <em>munāzaʿa</em> (riot) or <em>ashqiyāʾ</em> (pl. of <em>shaqī</em>, brigand, rascal, wretch) and there derivatives, tended to cluster around specific areas in the city of Damascus as well as in the larger Province of Syria. After submitting my thesis, I wanted to further scrutinize this impression. But how could I systematically test this hypothesis for a large number of terms without sieving through all the newspaper articles again and without manually locating every relevant toponym on paper maps?</p>
+<p>In the perfect world of infinite resources and skills, one would already have a fully coded database of individual historical events and machine-readable transcriptions of sources. In such a case, qualitative coding, semantic and linguistic mark-up of mono-thematic chunks of information, or a combination of both would have already established the link between the historical criteria of interest and geographic locations. Toponyms would function as placeholders for locational data on latitude and longitude stored in a second database. Integrated into a Geographic Information System (GIS), most analytical queries could be readily displayed and printed. However, in the real world of the humanities and particularly the field of Middle East studies, we encounter individuals with limited access to resources toiling away in isolation from other researchers as the most common case. As a result, we have to work with partially and inconsistently coded heterogeneous data in databases, most often some sort of reference managing software, whose smallest unit are individual sources instead of events—if we have machine-readable data at all.</p>
+<p>This paper elaborates how one can nevertheless produce meaningful (and sometimes visually appealing) maps that visualize the analytical questions at hand with a relatively low level of programming skill and within a reasonable amount of time. To achieve this goal, the aim is to re-purpose software already in use (e.g. a reference manager) and to employ file formats and programming languages that maintain a high level of human-readability, are well established and widely used, and are suited for most tasks at hand. In addition, the number of file formats and programming languages should be kept as small as possible and preference should be given to software and formats that are distributed as either open source or under a creative commons license. In other words, the workflow presented in this paper ensures ease of use, low additional costs and programming efforts, and long-time data accessibility, including human-readability.</p>
+<p>The languages and formats thus chosen were—and here one cannot avoid some technical acronyms—XML and its siblings XSLT and XPath for storing and processing data, JSON for serving the data to the open-source mapping tool SIMILE Exhibit 3, and HTML (including CSS) for displaying the results.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> All of these formats are recommended standards established by the <a href="http://www.w3.org/">World Wide Web Consortium (W3C)</a><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>—with the exception of JSON, which is an Ecma standard<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>—and can be displayed and edited with the simplest text-editing software already present on one’s computer. All of the most widely adopted reference managing software applications, such as <a href="https://www.zotero.org/">Zotero</a>, <a href="http://endnote.com/">EndNote</a>, <a href="http://www.citavi.com/">Citavi</a>, <a href="http://www.sonnysoftware.com/">BookEnds</a>, <a href="http://www.mendeley.com/">Mendeley</a>, <a href="http://thirdstreetsoftware.com/">Sente</a> etc., can export data as XML.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> Processing the XML with XSLT stylesheets needs an interpreter, of which there exists a myriad of free software implementations that meet the established criteria. As I already had a license for and experience with one of the major proprietary XML editors, <a href="http://www.oxygenxml.com/">oXygen</a>, I opted for this software instead of an open-source alternative.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
+<p>It must be kept in mind that “digital” does not mean “fully automated”. Indeed, as we will see, the suggested workflow involves many steps that can only be partially automated since they depend on the human capacity for judgement and comprehension of implicit information. The only actual programming—that is, serialized transformations of data and automated generation of new data points—is done with XSLT stylesheets. It is far beyond the scope and intent of the present paper to provide an introduction to XSLT or, for that matter, XML, XPath, HTML, CSS, JSON etc. These can be found in the referenced links and documentations. Instead, the paper focuses on the general steps necessary for correlating toponyms and geocoded locations with some historical data of interest to the researcher, using the example of the geographic distribution of references to <em>ashqiyāʾ,</em> and presents a concrete tool for visualising the mashed-up data on a map. However, the detailed examples provided in this paper should allow even those readers who have never before seen XML or a website’s underlying HTML to follow the discussion and to remove some of the menace of “programming”. In a similar vein, I will not present the minute details and idiosyncrasies of my XSLT stylesheets. Interested readers can scrutinize, download, and—if I am lucky—improve them on the code-sharing website <a href="https://github.com/tillgrallert/MappingOttomanDamascus2014/">GitHub</a>.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> In similar vein, I have made example data as well as a <a href="https://tillgrallert.github.io/MappingOttomanDamascus2014/">visualisation of the geographical distribution of references to <em>ashqiyāʾ</em></a> publicly available online for the readers’ perusal.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> Finally, special attention is paid to the critical evaluation of every technology’s and methodological approach’s implications for the analytical question at hand.</p>
+<h1 id="sec-sources">1. Starting from a database of sources</h1>
+<p>My research into the history of public space(s) and contentious repertoires is based in large part on systematic readings of two Damascene and four Beiruti newspapers, and makes occasional recourse to other newspapers and journals from Beirut, Cairo, Damascus, and Istanbul between 1875-1914. Comprehensive collections of any of the three Damascene newspapers, <em>Sūriye</em>, <em>Dimashq</em>, and <em>al-Shām</em>, published before 1908 are yet to be discovered,<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> but the press in the neighbouring city of Beirut carried articles about and from Damascus on a regular basis and copies survived in a number of libraries and archives. Therefore I employed the Beiruti newspapers <em>Ḥadīqat al-Akhbār</em> (1881-88, semi-official publication of the province of Syria), <em>al-Bashīr</em> (1875-1914, a Jesuit publication), <em>Lisān al-Ḥāl</em> (1877-1914, published by Khalīl Sarkīs), and <em>Thamarāt al-Funūn</em> (1875-1895, 1908, published by <em>Jamʿiyyat al-Funūn</em>, ʿAbd al-Qādir al-Qabbānī, and Aḥmad Ḥasan Ṭabbāra) in addition to the Damascene publications <em>Suriye</em> (1882-88, 1899-1902, the official provincial gazette) and the daily newspaper <em>al-Muqtabas</em> (1908 onwards, published by Muḥammad Kurd ʿAlī).<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> Throughout the years under survey, letters from readers and correspondents were the common form of reporting from places other than a newspaper’s printing location. Letters from Damascus were particularly frequent. Despite various gaps and irregularities in the density of reports, we have more or less weekly accounts of Damascene events over the course of 40 years. This vast body of 3.000 odd regular reports provides us with a yet untapped source of the social and political history of Damascus, often reporting events and details not covered by either the consular reports or much later written memoirs.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p>
+<p>Meta-data, including excerpts, partial transcriptions and translations, and images of all articles were manually entered into a relational database parallel to and during the reading at libraries and archives. This process included some semantic mark-up of persons and locations with simple XML tags (<code>&lt;persName&gt;</code> and <code>&lt;placeName&gt;</code>), which happen to conform to the Text Encoding Initiative’s flavor of XML (TEI P5).<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> In a second step, every article was coded with keywords for topic, type of publication, referenced locations etc.</p>
+<p>Due to its ease of use and easy customisation of the underlying database as well as the graphic user interface (GUI), I employ the off-the-shelf reference managing software Sente running on Apple’s OS X and iOS operating systems.<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a> Sente stores all data in an open-source SQLite database,<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> which can be queried through Sente’s GUI or any tool able to manipulate SQLite databases. Individual references can be tagged and tags can be organised in hierarchical ontologies. In addition, the entire database or the result of any query can be exported as an XML file. Using proprietary software always poses the danger of trapping one’s most valuable asset, the research data. Sente’s reliance on an open-source database for storing the data and the possibility to export all data in a well-understood, structured, and open format, such as XML, ensures that the research data can be accessed without any loss of information at any given moment and without continued access to Sente itself. For the purpose of the present paper, the basis for all further manipulations and processing of data is the Sente-generated XML output.</p>
+<p>Fig.1 and 2 show the same information—an article from an anonymous reader-cum-correspondent of the Beiruti newspaper <em>Lisān al-Ḥāl</em> in Damascus dated 31 May and published on 5 June 1884 reporting on bandits (<em>ashqiyāʾ</em>) from the quarter of Mīdān attacking a caravan from the Jabal Ḥawrān just outside the city gates—within Sente’s GUI and as XML export.</p>
+<figure>
+<img src="assets/sente-gui.png" alt="Fig. 1, Lisān al-Ḥāl 5 Jun 1884 (#681) as displayed in Sente’s GUI" id="fig-1" /><figcaption>Fig. 1, Lisān al-Ḥāl 5 Jun 1884 (#681) as displayed in Sente’s GUI</figcaption>
+</figure>
+<p>Fig. 1 shows a list of chronologically sorted references in the upper section of the main panel of Sente’s GUI. To the right, one can find detailed bibliographic information on the selected reference, including an English summary of the article’s content, as well as a number of tags describing both meta-information on the article and some of its content in the lower section. A digitised image of the article is displayed below the reference list. Note that the summary mixes English and transliterations of Arabic without any computer-readable marker to distinguish between the two. Note also that the summary contains some semantic mark-up of toponyms inside the <code>&lt;placeName&gt;</code> tags. Fig. 2 presents the same information as a tree of XML nodes:</p>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;tss:senteContainer</span><span class="ot"> xmlns:tss=</span><span class="st">&quot;http://www.thirdstreetsoftware.com/SenteXML-1.0&quot;</span><span class="kw">&gt;</span>
+   <span class="kw">&lt;tss:library&gt;</span>
+       <span class="kw">&lt;tss:references&gt;</span>
+           <span class="kw">&lt;tss:reference&gt;</span>
+               <span class="kw">&lt;tss:publicationType</span><span class="ot"> name=</span><span class="st">&quot;Newspaper article&quot;</span><span class="kw">/&gt;</span>
+               <span class="kw">&lt;tss:dates&gt;</span>
+                   <span class="kw">&lt;tss:date</span><span class="ot"> day=</span><span class="st">&quot;5&quot;</span><span class="ot"> month=</span><span class="st">&quot;6&quot;</span><span class="ot"> type=</span><span class="st">&quot;Publication&quot;</span><span class="ot"> year=</span><span class="st">&quot;1884&quot;</span><span class="kw">/&gt;</span>
+                   <span class="co">&lt;!-- ... --&gt;</span>
+               <span class="kw">&lt;/tss:dates&gt;</span>
+               <span class="kw">&lt;tss:characteristics&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;articleTitle&quot;</span><span class="kw">&gt;</span>murāsilāt: al-shām fī 31 ayār<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;publicationTitle&quot;</span><span class="kw">&gt;</span>lisān al-ḥāl<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;abstractText&quot;</span><span class="kw">&gt;</span>on the public works conducted by the municipality <span class="kw">&lt;br/&gt;</span>- for months the municipality has been working on paving the street from the <span class="kw">&lt;placeName&gt;</span>Serai<span class="kw">&lt;/placeName&gt;</span> to the <span class="kw">&lt;placeName&gt;</span>Bawābat Allah<span class="kw">&lt;/placeName&gt;</span> with black stones resembling the pavement found in Alexandria. <span class="kw">&lt;br/&gt;</span>- The measure is funded by a municipal tax (ḍarība) of 60 para [Ps 1<span class="dv">&amp;quot;</span>20] on every raṭl of meat sold. <span class="kw">&lt;br/&gt;</span>- in consequence the butchers went on strike for 2 days (fa-hāja al-jazzārūn min dhālika wa mājū wa azbadū wa arʿadū wa tawaffaqū ʿan al-dhabaḥ yawmayn), i.e. they foamed and thundered and stopped butchering, after which the municipality revoked the measure. the price for a raṭl had rissen some Ps 3 as a result <span class="kw">&lt;br/&gt;</span>- 2 days ago: some rascals (al-ashqiyāʾ) from the population (ahālī) of the Mīdān attacked the caravan carrying natural salt from the Ḥawrān from the village of Ḥallad just outside the city gates (bāb al-madīna) killing one and wounding 2. The authorities responded quickly with the public prosecutor investigating the case, and the family (qawm) of the victims carried their dead back to the mountain. the authorities hope to quickly arrest those responsible<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;language&quot;</span><span class="kw">&gt;</span>arabic<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;pages&quot;</span><span class="kw">&gt;</span>3-4<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;publicationCountry&quot;</span><span class="kw">&gt;</span>Bayrūt<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;UUID&quot;</span><span class="kw">&gt;</span>E51A2AE9-2C55-411F-B813-0D802281A229<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;volume&quot;</span><span class="kw">&gt;</span>681<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="kw">&lt;tss:characteristic</span><span class="ot"> name=</span><span class="st">&quot;Signatur&quot;</span><span class="kw">&gt;</span>Mic-Na:000111-4<span class="kw">&lt;/tss:characteristic&gt;</span>
+                   <span class="co">&lt;!-- ... --&gt;</span>
+               <span class="kw">&lt;/tss:characteristics&gt;</span>
+               <span class="kw">&lt;tss:keywords&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Bab Misr/ Bawabat Allah<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Damascus<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Marja<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Midan<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Municipal government<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Prices of Foodstuffs<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Public works<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="kw">&lt;tss:keyword</span><span class="ot"> assigner=</span><span class="st">&quot;Sente User XY&quot;</span><span class="kw">&gt;</span>Road works<span class="kw">&lt;/tss:keyword&gt;</span>
+                   <span class="co">&lt;!-- ... --&gt;</span>
+               <span class="kw">&lt;/tss:keywords&gt;</span>
+               <span class="kw">&lt;tss:attachments&gt;</span>
+                   <span class="kw">&lt;tss:attachmentReference</span><span class="ot"> type=</span><span class="st">&quot;PDF (Portable Document Format)&quot;</span><span class="kw">&gt;</span>
+                       <span class="kw">&lt;URL&gt;</span>file://localhost/.../SenteLibrary.sente6lib/Contents/Attachments/!%20Unknown%20Author(s)/1884%20lis%C4%81n%20al-%E1%B8%A5%C4%81l%20681%20mur%C4%81sil%C4%81t%20al-sh%C4%81m%20f%C4%AB%2031%20ay%C4%81r.pdf<span class="kw">&lt;/URL&gt;</span>
+                   <span class="kw">&lt;/tss:attachmentReference&gt;</span>
+               <span class="kw">&lt;/tss:attachments&gt;</span>
+           <span class="kw">&lt;/tss:reference&gt;</span>
+       <span class="kw">&lt;/tss:references&gt;</span>
+   <span class="kw">&lt;/tss:library&gt;</span>
+<span class="kw">&lt;/tss:senteContainer&gt;</span></code></pre></div>
+<p>Fig. 2, the same data as Sente XML.</p>
+<p>Each reference in the reference list of Fig. 1 is represented by a <code>&lt;tss:reference&gt;</code> node (also called “elements” in XML parlance). Inside this node one finds various child nodes that provide a detailed description of the reference: <code>&lt;tss:dates&gt;</code> and its descendants provide publication dates as well as timestamps for edits. Most of the bibliographic data is found in <code>&lt;tss:characteristic&gt;</code> nodes with a “name” attribute that describes their function: issue and volume numbers, publication and article titles, page numbers, place of publication as well as content. A <code>&lt;tss:keyword&gt;</code> node stores the tags and the link to the attached image of the article is provided in the <code>&lt;tss:attachment&gt;</code> node.</p>
+<p>The available data itself is imperfect insofar as the categories of “news report” and “newspaper article” are fuzzy in the context of the late nineteenth-century Arabic and Ottoman press. During most of the period under study, newspapers did not mark individual articles with a heading. Sections of news reports were marked as “local news” (variably titled <em>akhbār maḥalliyya</em>, <em>ḥawādith maḥalliyya</em>, <em>ḥawādith baladiyya</em>, <em>ḥawādith dākhiliyya</em>, or just <em>maḥalliyya</em>) or “regional news” (labelled <em>akhbār al-jihāt</em>, <em>al-jihāt</em>, <em>akhbār al-wilāya</em>, <em>ḥawādith al-wilāya</em>) with small graphic marks of boundaries between reports. Consequently, the granularity of capturing individual articles varies across the sample between newspapers as well as over time. Opinion pieces and editorials were almost entirely excluded from the sample.<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a></p>
+<p>Secondly, while human beings are used to multilingual contexts and implicit information, computers are not. A research database uniting sources in more than one language and more than one script—including a mix of translations and different transcriptions of languages into multiple scripts—resists any attempt of “catch-it-all” searches for literal strings.<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a> Explicit semantic mark-up is thus the only way to disambiguate the source texts and make them accessible to computational analysis.</p>
+<p>Thirdly, the semantic mark-up and the ontology for tagging sources evolved—and in any real-world research project they commonly evolve—over the course of the data capturing process. This means that the density and quality of mark-up varies across the sample. The semantic mark-up of persons and locations within Sente is far from complete. Due to available tools further down in the workflow, the original semantic mark-up aimed at establishing every relevant string (i.e. a name of a person or place) only once, instead of marking every occurrence of each individual string.<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a></p>
+<h1 id="sec-locations">2. Establishing a list of geocoded locations</h1>
+<p>In order to display places on a map, toponyms must be associated with locations, for example, by providing geographic information on latitude and longitude (geocoding). The first step in this process involves extracting all relevant toponyms from the research database and organizing them by the places they signify. Second, these places must be geocoded.</p>
+<h2 id="extracting-the-toponyms-and-organizing-a-hierarchy-of-places">2.1 Extracting the toponyms and organizing a hierarchy of places</h2>
+<p>In a best-case scenario, the semantic mark-up of the research data would already differentiate between the personal name “Paris” and the toponym “Paris”, to use a common example. More precisely, the semantic mark-up would differentiate between all individual persons named “Paris”, such as the well-known heiress to the Hilton hotel chain, and places of the same name, such as the capital of France. On the other hand, such mark-up would also go beyond the literal string in Latin script and note that an Arabic reference to <em>bārīs</em> in the newspaper <em>Lisān al-Ḥāl</em> concerned the latter. Yet, the most common scenario for historians of the Middle East, as outlined in section 1, are databases with partially implemented semantic mark-up and an inconsistent tagging ontology.</p>
+<p>Thus, an ontology of places, including all their known names in the languages relevant to the research project, was established by:</p>
+<ol type="1">
+<li>extracting the tagging ontology from the Sente SQLite database;</li>
+<li>extracting all strings marked as <code>&lt;placeName&gt;</code> from the XML library file exported from Sente using XSLT<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a>;</li>
+<li>manually adding additional highly likely or known spellings and toponyms missing from either a) and b).</li>
+</ol>
+<p>The resulting list of places was then organized into a hierarchy following the Ottoman administrative divisions at use during the time under study and local spatial organization as presented in the sources themselves (i.e. the neighbourhood of … in the quarter of … in the <em>thamn</em>/ <em>nāḥiye</em> of … ).<a href="#fn18" class="footnoteRef" id="fnref18"><sup>18</sup></a></p>
+<p>Following the general considerations as to the preference of open and widely accepted standards, and the availability of the research data as an XML file, the ontology of places was also implemented in XML. There are myriads of XML schemas for storing and processing geographical data. I chose to implement the ontology in the Text Encoding Initiative’s TEI P5 XML flavor, due to my familiarity with it. TEI is specifically tailored to the semantic mark-up of textual sources and offers full support of Unicode characters. It is also the quasi-standard for many digital edition projects, which made it a natural choice.<a href="#fn19" class="footnoteRef" id="fnref19"><sup>19</sup></a></p>
+<p>TEI P5 provides a <code>&lt;listPlace&gt;</code> container element, which can contain further <code>&lt;listPlace&gt;</code> and <code>&lt;place&gt;</code> elements that allow for a representation of administrative divisions. Each <code>&lt;place&gt;</code> element should contain at least one <code>&lt;placeName&gt;</code> element, specifying the toponym, and a <code>&lt;location&gt;</code> element to record information on the geographic location, such as a postal address, or, in our case, a combination of latitude and longitude values. As we have no information on the locations yet, the <code>&lt;location&gt;</code> tag will be populated in the next step.</p>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;tei:listPlace</span><span class="ot"> type=</span><span class="st">&quot;province&quot;</span><span class="ot"> xmlns:tei=</span><span class="st">&quot;http://www.tei-c.org/ns/1.0&quot;</span><span class="kw">&gt;</span>
+   <span class="kw">&lt;tei:listPlace</span><span class="ot"> type=</span><span class="st">&quot;district&quot;</span><span class="kw">&gt;</span>
+       <span class="kw">&lt;tei:listPlace</span><span class="ot"> type=</span><span class="st">&quot;county&quot;</span><span class="kw">&gt;</span>
+           <span class="kw">&lt;tei:listPlace</span><span class="ot"> type=</span><span class="st">&quot;town&quot;</span><span class="kw">&gt;</span>
+               <span class="kw">&lt;tei:place</span><span class="ot"> type=</span><span class="st">&quot;town&quot;</span><span class="kw">&gt;</span>
+                   <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;ar-Latn-x-ijmes&quot;</span><span class="kw">&gt;</span>Dimashq<span class="kw">&lt;/tei:placeName&gt;</span>
+                   <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;ota-Latn-x-ijmes&quot;</span><span class="kw">&gt;</span>Şām-i şerīf<span class="kw">&lt;/tei:placeName&gt;</span>
+                   <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;tr&quot;</span><span class="kw">&gt;</span>Şam-i şerif<span class="kw">&lt;/tei:placeName&gt;</span>
+                   <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span>Damascus<span class="kw">&lt;/tei:placeName&gt;</span>
+                   <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;de&quot;</span><span class="kw">&gt;</span>Damaskus<span class="kw">&lt;/tei:placeName&gt;</span>
+                   <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>Damas<span class="kw">&lt;/tei:placeName&gt;</span>
+               <span class="kw">&lt;/tei:place&gt;</span>
+           <span class="kw">&lt;/tei:listPlace&gt;</span>
+       <span class="kw">&lt;/tei:listPlace&gt;</span>
+   <span class="kw">&lt;/tei:listPlace&gt;</span>
+<span class="kw">&lt;/tei:listPlace&gt;</span></code></pre></div>
+<p>Fig. 3, various known toponyms for the city of Damascus, recorded in a hierarchical ontology in TEI P5 XML. Note that information on languages and scripts is recorded in the <code>@xml:lang</code> attribute.</p>
+<h2 id="geocoding-the-places">2.2 Geocoding the places</h2>
+<p>While there is no shortage of gazetteers of toponyms and their respective locations on the planet for the contemporary world and for languages written in Latin script, and while there are notable efforts to provide such tools for the study of the Roman and Hellenistic worlds of antiquity,<a href="#fn20" class="footnoteRef" id="fnref20"><sup>20</sup></a> such historical gazeteers are completely absent for the Ottoman Empire, <em>Bilād al-Shām</em>, and the larger Eastern Mediterranean between antiquity and the twentieth century. Therefore, the places established in 2.1 had to be either manually geocoded using a paper map or through one of the ubiquitous online mapping tools such as the commercial services offered by Google,<a href="#fn21" class="footnoteRef" id="fnref21"><sup>21</sup></a> Yahoo,<a href="#fn22" class="footnoteRef" id="fnref22"><sup>22</sup></a> or Microsoft<a href="#fn23" class="footnoteRef" id="fnref23"><sup>23</sup></a> and the non-profit and community-driven projects of OpenStreetMap<a href="#fn24" class="footnoteRef" id="fnref24"><sup>24</sup></a> and WikiMapia,<a href="#fn25" class="footnoteRef" id="fnref25"><sup>25</sup></a> to name but a few. In addition, one can query online databases, such as GeoNames,<a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a> for the locations of toponyms.</p>
+<p>Due to the (still growing) number of places in a never finished research database and the aspired future interoperability of the ontology with the semantic web, (semi-)automatic geocoding was preferred over purely manual coding. GeoNames is licensed under a creative-commons attribution license, free to use, and provides full-Unicode support, including Arabic. The database can be downloaded in its entirety or queried through a large number of application programming interfaces (APIs) that return data as XML.<a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a> This made GeoNames the perfect choice for the task at hand.</p>
+<p>A XSLT stylesheet<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a> queries the GeoNames database through the search API for the latitude and longitude of each place in the ontology produced in 2.1 as well as for additional toponyms, not yet available in the ontology. The first query for the example from fig. 3 would be “<a href="http://api.geonames.org/search?name=Damascus&amp;maxRows=1&amp;style=FULL&amp;lang=en&amp;username=demo" class="uri">http://api.geonames.org/search?name=Damascus&amp;maxRows=1&amp;style=FULL&amp;lang=en&amp;username=demo</a>”,<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a> which returns the following XML:</p>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;geonames</span><span class="ot"> style=</span><span class="st">&quot;FULL&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;totalResultsCount&gt;</span>228<span class="kw">&lt;/totalResultsCount&gt;</span>
+    <span class="kw">&lt;geoname&gt;</span>
+        <span class="kw">&lt;toponymName&gt;</span>Damascus<span class="kw">&lt;/toponymName&gt;</span>
+        <span class="kw">&lt;name&gt;</span>Damascus<span class="kw">&lt;/name&gt;</span>
+        <span class="kw">&lt;lat&gt;</span>33.5102<span class="kw">&lt;/lat&gt;</span>
+        <span class="kw">&lt;lng&gt;</span>36.29128<span class="kw">&lt;/lng&gt;</span>
+        <span class="kw">&lt;geonameId&gt;</span>170654<span class="kw">&lt;/geonameId&gt;</span>
+        <span class="kw">&lt;countryCode&gt;</span>SY<span class="kw">&lt;/countryCode&gt;</span>
+        <span class="kw">&lt;countryName&gt;</span>Syria<span class="kw">&lt;/countryName&gt;</span>
+        <span class="kw">&lt;fcl&gt;</span>P<span class="kw">&lt;/fcl&gt;</span>
+        <span class="kw">&lt;fcode&gt;</span>PPLC<span class="kw">&lt;/fcode&gt;</span>
+        <span class="kw">&lt;fclName&gt;</span>city, village,...<span class="kw">&lt;/fclName&gt;</span>
+        <span class="kw">&lt;fcodeName&gt;</span>capital of a political entity<span class="kw">&lt;/fcodeName&gt;</span>
+        <span class="kw">&lt;population&gt;</span>1569394<span class="kw">&lt;/population&gt;</span>
+        <span class="kw">&lt;alternateNames&gt;</span>Al-Sham,Al-Shām,Cham,DAM,Damas,Damasc,Damasco,Damascu,Damascus,Damasek,Damask,Damask<span class="dv">&amp;quot;</span>,Damaskas,Damasko,Damaskos,Damaskus,Damaszek,Damašek,Dammeseq,Dimaejk,Dimashk,Dimashk al-Sham,Dimashk al-Shām,Dimashq,Dimeshki esh Sham,Dimishq,Dimäjk,Esh Sham,Esh Shām,Sam,da ma shi ge,damaseukuseu,damasukasu,dmshq,dmsq,drmswq,Şam,Δαμασκός,Дамаск,Дамаскъ,Димишқ,Դամասկոս,דמשק,دمشق,ܕܪܡܣܘܩ,ደማስቆ,ダマスカス,大马士革,다마스쿠스<span class="kw">&lt;/alternateNames&gt;</span>
+        <span class="kw">&lt;elevation/&gt;</span>
+        <span class="kw">&lt;continentCode&gt;</span>AS<span class="kw">&lt;/continentCode&gt;</span>
+        <span class="kw">&lt;adminCode1</span><span class="ot"> ISO3166-2=</span><span class="st">&quot;DI&quot;</span><span class="kw">&gt;</span>13<span class="kw">&lt;/adminCode1&gt;</span>
+        <span class="kw">&lt;adminName1&gt;</span>Damascus City<span class="kw">&lt;/adminName1&gt;</span>
+        <span class="co">&lt;!-- ... --&gt;</span>
+        <span class="kw">&lt;alternateName</span><span class="ot"> lang=</span><span class="st">&quot;am&quot;</span><span class="kw">&gt;</span>ደማስቆ<span class="kw">&lt;/alternateName&gt;</span>
+        <span class="kw">&lt;alternateName</span><span class="ot"> lang=</span><span class="st">&quot;ar&quot;</span><span class="kw">&gt;</span>دمشق<span class="kw">&lt;/alternateName&gt;</span>
+        <span class="kw">&lt;alternateName</span><span class="ot"> lang=</span><span class="st">&quot;bg&quot;</span><span class="kw">&gt;</span>Дамаск&lt;/alternateName&gt;
+        <span class="kw">&lt;alternateName</span><span class="ot"> lang=</span><span class="st">&quot;bs&quot;</span><span class="kw">&gt;</span>Damask<span class="kw">&lt;/alternateName&gt;</span>
+        <span class="kw">&lt;alternateName</span><span class="ot"> lang=</span><span class="st">&quot;ca&quot;</span><span class="kw">&gt;</span>Damasc<span class="kw">&lt;/alternateName&gt;</span>
+        <span class="kw">&lt;alternateName</span><span class="ot"> lang=</span><span class="st">&quot;cs&quot;</span><span class="kw">&gt;</span>Damašek<span class="kw">&lt;/alternateName&gt;</span>
+        <span class="co">&lt;!-- ...   --&gt;</span>
+        <span class="kw">&lt;timezone</span><span class="ot"> dstOffset=</span><span class="st">&quot;3.0&quot;</span><span class="ot"> gmtOffset=</span><span class="st">&quot;2.0&quot;</span><span class="kw">&gt;</span>Asia/Damascus<span class="kw">&lt;/timezone&gt;</span>
+        <span class="kw">&lt;bbox&gt;</span>
+            <span class="kw">&lt;west&gt;</span>36.09593<span class="kw">&lt;/west&gt;</span>
+            <span class="kw">&lt;north&gt;</span>33.67277<span class="kw">&lt;/north&gt;</span>
+            <span class="kw">&lt;east&gt;</span>36.48662<span class="kw">&lt;/east&gt;</span>
+            <span class="kw">&lt;south&gt;</span>33.34763<span class="kw">&lt;/south&gt;</span>
+        <span class="kw">&lt;/bbox&gt;</span>
+        <span class="kw">&lt;score&gt;</span>106.7225112915039<span class="kw">&lt;/score&gt;</span>
+    <span class="kw">&lt;/geoname&gt;</span>
+<span class="kw">&lt;/geonames&gt;</span></code></pre></div>
+<p>Fig. 4, the GeoNames entry for the city of Damascus as returned by the API call.</p>
+<p>The information on the location and additional toponyms is extracted from the <code>&lt;lat&gt;</code>, <code>&lt;lng&gt;</code>, and <code>&lt;alternateName&gt;</code> nodes of the resulting XML (fig. 4) and integrated into the original TEI ontology (fig. 3). To record the specific entry in the GeoNames database as the source of the information, an <code>@xml:id</code> attribute based on the <code>&lt;geonameId&gt;</code> of the query result is added to the <code>&lt;place&gt;</code> element:</p>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;tei:listPlace</span><span class="ot"> corresp=</span><span class="st">&quot;#lgn170654&quot;</span><span class="ot"> type=</span><span class="st">&quot;province&quot;</span><span class="ot"> xmlns:tei=</span><span class="st">&quot;http://www.tei-c.org/ns/1.0&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;tei:listPlace</span><span class="ot"> corresp=</span><span class="st">&quot;#lgn170654&quot;</span><span class="ot"> type=</span><span class="st">&quot;district&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;tei:listPlace</span><span class="ot"> corresp=</span><span class="st">&quot;#lgn170654&quot;</span><span class="ot"> type=</span><span class="st">&quot;county&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;tei:listPlace</span><span class="ot"> corresp=</span><span class="st">&quot;#lgn170654&quot;</span><span class="ot"> type=</span><span class="st">&quot;town&quot;</span><span class="kw">&gt;</span>
+                <span class="kw">&lt;tei:place</span><span class="ot"> type=</span><span class="st">&quot;town&quot;</span><span class="ot"> xml:id=</span><span class="st">&quot;lgn170654&quot;</span><span class="kw">&gt;</span>
+                    <span class="kw">&lt;tei:placeName</span><span class="ot"> type=</span><span class="st">&quot;toponym&quot;</span><span class="kw">&gt;</span>Damascus<span class="kw">&lt;/tei:placeName&gt;</span>
+                    <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;ar-Latn-x-ijmes&quot;</span><span class="kw">&gt;</span>Dimashq<span class="kw">&lt;/tei:placeName&gt;</span>
+                    <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;ota-Latn-x-ijmes&quot;</span><span class="kw">&gt;</span>Şām-i şerīf<span class="kw">&lt;/tei:placeName&gt;</span>
+                    <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;tr&quot;</span><span class="kw">&gt;</span>Şam-i şerif<span class="kw">&lt;/tei:placeName&gt;</span>
+                    <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span>Damascus<span class="kw">&lt;/tei:placeName&gt;</span>
+                    <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;de&quot;</span><span class="kw">&gt;</span>Damaskus<span class="kw">&lt;/tei:placeName&gt;</span>
+                    <span class="kw">&lt;tei:placeName</span><span class="ot"> xml:lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>Damas<span class="kw">&lt;/tei:placeName&gt;</span>
+                    <span class="kw">&lt;tei:location&gt;</span>
+                        <span class="kw">&lt;tei:geo&gt;</span>33.5102,36.29128<span class="kw">&lt;/tei:geo&gt;</span>
+                    <span class="kw">&lt;/tei:location&gt;</span>
+                <span class="kw">&lt;/tei:place&gt;</span>
+            <span class="kw">&lt;/tei:listPlace&gt;</span>
+        <span class="kw">&lt;/tei:listPlace&gt;</span>
+    <span class="kw">&lt;/tei:listPlace&gt;</span>
+<span class="kw">&lt;/tei:listPlace&gt;</span></code></pre></div>
+<p>Fig. 5, updated TEI ontology of places.</p>
+<p>While GeoNames commonly returns correct results and avoids the bias for locations within the United States shown by Google’s and other mapping tools,<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a> the correct location must be manually confirmed in cases of two or more locations with a similar name. In addition, many smaller locations or places not longer existing, such as neighbourhoods and Suqs inside the city of Damascus, are not (yet) listed in the database. To correct the data and quickly retrieve geo-spatial data for visually established locations, I employ Google Earth,<a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a> which can ingest data from XML files adhering to the KML standard.<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a> A simple XSLT stylesheet maps the TEI XML of Fig. 5 to a KML file, which can then be imported into Google Earth<a href="#fn33" class="footnoteRef" id="fnref33"><sup>33</sup></a>:</p>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;kml:kml</span><span class="ot"> xmlns:kml=</span><span class="st">&quot;http://earth.google.com/kml/2.0&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;kml:Document&gt;</span>
+        <span class="co">&lt;!-- ... --&gt;</span>
+        <span class="kw">&lt;kml:Placemark</span><span class="ot"> xml:id=</span><span class="st">&quot;lgn170654&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;kml:name&gt;</span>Dimashq<span class="kw">&lt;/kml:name&gt;</span>
+            <span class="kw">&lt;kml:Point&gt;</span>
+                <span class="kw">&lt;kml:coordinates&gt;</span>36.29128, 33.5102<span class="kw">&lt;/kml:coordinates&gt;</span>
+            <span class="kw">&lt;/kml:Point&gt;</span>
+        <span class="kw">&lt;/kml:Placemark&gt;</span>
+        <span class="co">&lt;!-- ... --&gt;</span>
+    <span class="kw">&lt;/kml:Document&gt;</span>
+<span class="kw">&lt;/kml:kml&gt;</span></code></pre></div>
+<p>Fig. 6, a KML placemark` node for the toponym <em>Dimashq</em> and its latitude and longitude.</p>
+<p>Finally, Google Earth’s GUI allows to manually add “placemarks” to the map and to display the relevant geospatial information. This information can either be manually transferred or exported as KML, which can then be transformed to TEI XML and integrated into the ontology through another XSLT stylesheet.<a href="#fn34" class="footnoteRef" id="fnref34"><sup>34</sup></a></p>
+<h1 id="sec-mash-up">3. Mashing up the data</h1>
+<p>The next step is the actual analysis of whether a certain discourse or a particular vocabulary—the example for the current paper is the discourse on legitimate rule and violence and its vocabulary of <em>ashqiyāʾ</em> etc.—correlate with particular locations. In technical terms, we aim at establishing links between certain criteria within the research database (Sente XML) and the geospatial data in the ontology of places (TEI XML). The output is a count of instances of the search criteria per location. The relationship between locations and the number of references can be recorded in various ways; the format and level of detail are ultimately governed by the requirements of the chosen solution for visualizing the data.</p>
+<p>The process involves two steps, both of which are done with XSLT stylesheets:</p>
+<ol type="a">
+<li>Establishing a sub-sample of references/sources inside the XML research database that meet the criteria, for instance, all sources that contain references to all known forms and derivatives of the Arabic word <em>shaqī</em>, e.g. the plural <em>ashqiyāʾ</em>, the Ottoman-Turkish variants of <em>şakī</em> and <em>eşḳıyā</em>, as well as their possible English translations as <em>brigand</em>, <em>rascal</em>, <em>wretch</em>, <em>villain</em> etc. Including English translations is necessitated by the imperfections of the research database, as outlined in <a href="#sec-sources">section 1</a>, which might not contain transliterations in every instance of <em>ashqiyā</em>, but only an English summary.<a href="#fn35" class="footnoteRef" id="fnref35"><sup>35</sup></a></li>
+<li><p>Establishing the number of references within this subset that refer to any one of the known toponyms for every location of the ontology. This latter step represents some sort of a named entity recognition, insofar as it associates every instance of the strings “Damascus”, “Dimashq”, “Şām-i şerīf” etc. in the research database (including the geographic tags mentioned above), with the city of Damascus and a combination of values for latitude and longitude (33.5102, 36.29128).<a href="#fn36" class="footnoteRef" id="fnref36"><sup>36</sup></a> The most simple—although not necessary the most useful—notation of the result would be comma separated values (CSV):</p>
+<pre class="csv"><code>Toponym, latitude, longitude, number of references to &quot;ashqiyāʾ&quot;
+Dimashq, 33.5102, 36.29128, 88</code></pre></li>
+</ol>
+<p>Both steps involve a number of possible and likely errors, the extent of which cannot readily be quantified. The quality of step a) is mainly determined by the quality of the data-recording process and the search query. While it might not produce false positives, it will generate an unspecified number of false negatives: information present in the sources might not have been recorded and spelling errors, particularly in transcriptions, might pass unregistered.</p>
+<p>The error margin of step b) is much higher, as, in addition to the shortcomings of the data that hampered step a) with false negatives and which also apply here, it will produce false positives in cases of sources that cover more than a singular topic and in cases of ambiguous toponyms. Since the size of the geographic area (mostly the Ottoman provinces of Syria and Beirut) and the number of recorded toponyms in the ontology are both rather small and clearly focussed on Damascus and its surroundings, duplicate toponyms did not yet appear. Confusion between terms that designate places, persons, etc., such as the common example “Paris”, is not likely to occur in Arabic and can be omitted as a source of errors.<a href="#fn37" class="footnoteRef" id="fnref37"><sup>37</sup></a></p>
+<p>Some false positives can be averted based on linguistic structures and our knowledge of the recording process: If records in the research database were structured by topic, for instance through inserting paragraphs and additional graphical markers (see fig. 1), one can limit the query that correlates search criteria with toponyms to paragraphs. In similar vein, the query can be limited to sentences or a maximum range of words allowed between the search criteria and the toponyms. False positives caused by geographic tagging of poly-thematic entries in the database, can only be averted by ignoring the tags altogether. This in turn, however, would produce false negatives in cases of implicit locations that were recorded in the tags, but which are absent from the text of the reference. Altogether, the results should be taken with a grain of salt and be read as orders of magnitude instead of precise quantitative measurements.</p>
+<h1 id="sec-mapping">4. Visualising / mapping the data</h1>
+<p>The final task is to visualise the correlations between topics/vocabularies and locations on a map and in a meaningful way, such as colour and/or size. The tool chosen for visualising the data is the free and open-source Exihibit 3.0 SIMILE widget (Exhibit), which, inter alia, provides a JavaScript mapping tool that can display locations and additional information on base layers provided by Google maps and, through additional plug-ins, OpenStreetMap in any modern web-browser.<a href="#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a> Thus, it utilises available programs and server-side computing instead of providing another layer of complexity through additional software. All it needs is a HTML page that calls the Exhibit JavaScript framework and a JSON data source in its header. The display is then manipulated right inside the HTML code by a small variety of commands specific to Exhibit and can be styled with regular CSS. The only shortcoming of this solution is that the ease of use requires continuous internet access.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="ot"> xmlns:ex=</span><span class="st">&quot;http://api.simile-widgets.org/exhibit/3.0.0/&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> content=</span><span class="st">&quot;text/html; charset=UTF-8&quot;</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-Type&quot;</span><span class="kw">/&gt;</span>
+        <span class="kw">&lt;title&gt;</span>ashqiyāʾ between 1858 and 1917.<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://www.simile-widgets.org/styles/common.css&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">/&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;simileData-ashqiya&#39;.js&quot;</span><span class="ot"> rel=</span><span class="st">&quot;exhibit-data&quot;</span><span class="ot"> type=</span><span class="st">&quot;application/json&quot;</span><span class="kw">/&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://api.simile-widgets.org/exhibit/3.0.0/extensions/map/map-extension.js&quot;</span><span class="ot"> rel=</span><span class="st">&quot;exhibit-extension&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">/&gt;</span>
+        <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;http://api.simile-widgets.org/exhibit/3.0.0/exhibit-api.js&quot;</span><span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+    <span class="co">&lt;!-- ... --&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<p>Fig. 7, <code>&lt;link&gt;</code> nodes in the HTML header that load the Exhibit JavaScript framework and the data source.</p>
+<h2 id="the-json-data-source">4.1. The JSON data source</h2>
+<p>Exhibit requires a well-formed JSON file as data source, which can be imagined as a verbose description of a table with each cell being individually and coherently named. But Exhibit makes no requirements as to a specific terminology. Thus, we format the information on place (identified by one of the associated toponyms), type of entity (e.g. “quarter”, “street”, etc.), geographic location, and the number of references that met the particular search criteria produced in 3.b) as:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>  
+    <span class="dt">&quot;items&quot;</span><span class="fu">:</span><span class="ot">[</span><span class="fu">{</span>  
+            <span class="dt">&quot;label&quot;</span><span class="fu">:</span><span class="st">&quot;Dimashq&quot;</span><span class="fu">,</span>  
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span><span class="st">&quot;town&quot;</span><span class="fu">,</span>  
+            <span class="dt">&quot;typeCode&quot;</span><span class="fu">:</span><span class="st">&quot;3&quot;</span><span class="fu">,</span>  
+            <span class="dt">&quot;latlng&quot;</span><span class="fu">:</span><span class="st">&quot;33.5102, 36.29128&quot;</span><span class="fu">,</span>  
+            <span class="dt">&quot;events&quot;</span><span class="fu">:</span><span class="st">&quot;88&quot;</span><span class="fu">,</span>  
+            <span class="dt">&quot;eventType&quot;</span><span class="fu">:</span><span class="st">&quot;ashqiyāʾ&quot;</span>  
+        <span class="fu">}</span><span class="ot">]</span>
+<span class="fu">}</span></code></pre></div>
+<p>Fig. 8, the association of the toponym <em>Dimashq</em> and its latitude 33.5102 and longitude 36.29128 with the number of 88 references to <em>ashqiyāʾ</em> as a JSON array.</p>
+<h2 id="the-display-widgets">4.2 The display / widgets</h2>
+<p>Exhibit can display and visualise the JSON data source in various ways. Each display is called a “view” and represented by a <code>&lt;div&gt;</code> inside the HTML page. Using the “ex”-namespace, attributes added to the <code>&lt;div&gt;</code> specify and manipulate the displayed data as well as the display. We commence displaying a base-layer provided by Google maps to which we add clickable dots for each location in our JSON data source:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> ex:role=</span><span class="st">&quot;view&quot;</span>
+<span class="ot">    ex:viewClass=</span><span class="st">&quot;Map&quot;</span>
+<span class="ot">    ex:center=</span><span class="st">&quot;33.509166, 36.310154&quot;</span>
+<span class="ot">    ex:zoom=</span><span class="st">&quot;15&quot;</span>
+<span class="ot">    ex:mapHeight=</span><span class="st">&quot;580&quot;</span> 
+<span class="ot">    ex:label=</span><span class="st">&quot;events&quot;</span>   
+<span class="ot">    ex:latlng=</span><span class="st">&quot;.latlng&quot;</span>  
+<span class="ot">    ex:shape=</span><span class="st">&quot;circle&quot;</span>   
+<span class="ot">    ex:colorLegendLabel=</span><span class="st">&quot;Location type&quot;</span>   
+<span class="ot">    ex:colorCoder=</span><span class="st">&quot;type-color&quot;</span>   
+<span class="ot">    ex:colorKey=</span><span class="st">&quot;.typeCode&quot;</span>
+<span class="ot">    ex:sizeLegendLabel=</span><span class="st">&quot;Events&quot;</span>   
+<span class="ot">    ex:sizeCoder=</span><span class="st">&quot;events-size&quot;</span>   
+<span class="ot">    ex:sizeKey=</span><span class="st">&quot;.events&quot;</span><span class="kw">/&gt;</span></code></pre></div>
+<p>Fig. 9, the <code>&lt;div&gt;</code> tag with attributes specifying the view.</p>
+<p>The first section of attributes defines the display as a map, provides a point at the centre of the displayed map, a zoom-level, and a size for the map. The second and third sets of attributes link the functions of the Exhibit display to the entries in the JSON data source.</p>
+<p>By default, Exhibit provides all available information on each item in the data source, represented by a dot on the map, upon clicking on the dots. Yet, useful as equally shaped, sized, and coloured dots on a map might be to reveal geographical clustering, the information, we are actually interested in displaying is still missing from the map: the number of references inside our database that had met the search criteria per location. The most intuitive display would be areas instead of dots, whose size corresponds to the displayed information. In addition, a colour scheme for administrative divisions might further support easy readability of the map. Both functions are provided through another class of Exhibit’s <code>&lt;div&gt;</code>s, a “coder”. The coders are already linked in fig. 9.</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> ex:coderClass=</span><span class="st">&quot;ColorGradient&quot;</span>   
+<span class="ot">    ex:gradientPoints=</span><span class="st">&quot;1, #FF0000; 2, #FFA500; 3, #FFFF00; 4, #008000; 5, #0000FF; 6, #800080&quot;</span>   
+<span class="ot">    ex:role=</span><span class="st">&quot;coder&quot;</span>  
+<span class="ot">    id=</span><span class="st">&quot;type-color&quot;</span><span class="kw">/&gt;</span>  
+<span class="kw">&lt;div</span><span class="ot"> ex:coderClass=</span><span class="st">&quot;SizeGradient&quot;</span>   
+<span class="ot">    ex:gradientPoints=</span><span class="st">&quot;1, 10; 5,30; 30,60; 100, 100&quot;</span>   
+<span class="ot">    ex:role=</span><span class="st">&quot;coder&quot;</span>   
+<span class="ot">    id=</span><span class="st">&quot;events-size&quot;</span><span class="kw">/&gt;</span></code></pre></div>
+<p>Fig. 10, “coder” <code>&lt;div&gt;</code>s that specify the display of values associated with individual locations on the map.</p>
+<p>These coders specify that a minimal value of 1 report mentioning <em>ashqiyāʾ</em> shall be displayed as a circle of 10 pixels in diameter, while the maximal value of 100 reports shall result in a circle of 100 pixels in diameter. Note that the size gradient is non-linear. The colour corresponds to six administrative levels in discrete steps from the street (encoded as “1”), which are displayed in red (#FF000), to purple (#800080) circles signifying provinces of the Ottoman Empire after 1888. When the final code is loaded in a web-browser, the resulting map for the <em>ashqiyāʾ</em> sample will look like this (fig. 11):</p>
+<figure>
+<img src="assets/map.png" alt="Fig. 11: the Exihibit map view with circles whose size indicates the number of reports mentioning a specific criterion and whose colour corresponds to administrative levels" id="fig-11" /><figcaption>Fig. 11: the Exihibit map view with circles whose size indicates the number of reports mentioning a specific criterion and whose colour corresponds to administrative levels</figcaption>
+</figure>
+<p>Additional Exhibit views allow us to further explore the data source by limiting the display through various search criteria that might result in a website that looks like this (fig. 12):</p>
+<figure>
+<img src="assets/final-website.jpg" alt="Fig. 12: the final webpage adding various views to the map that allow to browse and limit the displayed data by various criteria" id="fig-12" /><figcaption>Fig. 12: the <a href="http://tillgrallert.github.io/MappingOttomanDamascus2014/html/simileMapTableH-ashqiya.html">final webpage</a> adding various views to the map that allow to browse and limit the displayed data by various criteria</figcaption>
+</figure>
+<h1 id="sec-conclusion">Conclusion</h1>
+<p>The suggested workflow provides a highly flexible visualisation framework for quickly testing possible correlations of historical data points and geographical locations. Once set up, the geocoded ontology of places and toponyms as well as the XSLT stylesheets can be re-used and maps can be produced almost instantaneously. The workflow is scalable to very large datasets of tens of thousands of sources. Quantitative increases in the amount of data and qualitative improvements of already existing data—be it improved semantic mark-up of the sources or further entries to the ontology of places—will have an immediate impact on the quality of the produced maps without tinkering with the XSLT stylesheets.</p>
+<p>The visualisation can help to detect geographic clustering that might otherwise remain shrouded—particularly in large data sets that have been accumulated over longer periods and whose meticulous details have slipped from the historian’s memory. Yet, the outcome must be taken with a grain of salt and seemingly apparent correlations must then be further scrutinised through more traditional methods of a much closer reading. The visualisation generates a dangerous sense of exactitude that obfuscates the inherent fuzziness of the categories, toponyms or locations: once represented in a map, everything is unambiguously located and defined. While the quality of the map is heavily dependent on the type of sources, on their granularity, on the degree of their internal heterogeneity, and, not the least, on the quality of metadata collection, this level of ambiguity is absent from the map itself.</p>
+<p>Keeping these shortcomings in mind, what, finally, are the outcomes of a spatial analysis for the exemplary research question in the introduction to this paper: to which extend did newspapers and particularly the news reports from and on Damascus between 1875 and 1914 perpetuate the state’s discourse on the provision of public order (<em>āsāyış-i ʿumūmī</em> / <em>rāḥat ʿumūmiyya</em>) for generating legitimate Ottoman statehood?</p>
+<p>Whereas newspapers were rife with reports on petty and violent crime—mostly theft and robbery—they remained significantly silent when it came to violent public action or chose to report such action only by denying it had ever occurred. In addition, they took redress to a euphemistic and generic language, preferring the “incident” (<em>ḥāditha</em> and <em>waqāʾiʿ</em>) for all sorts of unpleasant events over the more explicit statements of opposition and violence, such as <em>mushājara</em> (quarrel) or <em>munāzaʿa</em> (riot). “Bandit” (<em>shaqī</em>, pl. <em>ashqiyāʾ</em>) became the preferred label for any person engaged in violence potentially threatening the legitimacy of the ruling state. Also, as criminalised subjects and in accordance with the Penal Code, all such persons were stripped of their honorific titles and salutations (e.g. Muḥammad ibn ʿAlī instead of Muḥammad Efendi Bey). Only some of these omissions and linguistic markers can be attributed to the regime of censorship and the press laws increasingly regulating permissible news content in the later years of Abdülhamid II’s reign with the aim of preventing anything that could instigate fear and anxiety (<em>takhdīsh al-adhhān</em>) among the population and thus threaten the established order. Rather, as being mutually dependent, and as many publishers were at one point or another employees of the state, the state and the press joined forces in a common modernising project with an ever-expanding state at its core.<a href="#fn39" class="footnoteRef" id="fnref39"><sup>39</sup></a></p>
+<p>A spatial analysis of the discourse on violence reveals insights into the making of a specific (and idealized) urban identity as set against a violent “other”. The locus of the civilized, progressive, and essentially peaceful urban centre’s “other” are the geographic and socio-ethnic margins of the Province of Syria and the fringes of Ottoman society. <em>Geographically</em>, these margins are mostly located to the south of Damascus: the deserts of the east, the Lajā, and most prominently the Ḥawrān (including Jabal Durūz, Jabal Ḥawrān, and Qunayṭra and the plains to the West of it). These areas are of a vexing duality of a distant-present / known-unknown: on the one hand and for most townspeople they were as far away as any other place they had never been to. On the other, they were highly present in every-day stories and news reports. At the <em>socio-ethnical</em> margin, Druze, Bedouins, and Circassians are the loci of violence. The opposition between the sedentary urban population and the villains from the periphery culminates in a linguistic dichotomy of “the populace” (<em>al-qawm</em>) on the one hand, and the Bedouins on the other. Armed Bedouins and Druze of the south become the epitome of the vicious (semi-)nomadic bandits (<em>ashqiyāʾ</em>) threatening the urban “flock” under the protection of the Ottoman authorities.<a href="#fn40" class="footnoteRef" id="fnref40"><sup>40</sup></a> Accordingly, an opinion piece from Damascus in 1881 was titled <em>al-waṭan wa ashqiyāʾ al-durūz</em>—the homeland and the Druze bandits.<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a></p>
+<h1 id="bibliography">Bibliography</h1>
+<p>Ayalon, Ami. <em>The Press in the Arab Middle East: A History</em>. New York: Oxford University Press, 1995.</p>
+<p>Grallert, Till. “To Whom Belong the Streets? Property, Propriety, and Appropriation: The Production of Public Space in Late Ottoman Damascus, 1875-1914.” unpublished PhD diss., FU Berlin, Apr 2014.</p>
+<p>al-Mallūḥī, Mihyār ʿAdnān. <em>Muʿjam al-jarāʾid al-sūriyya 1865-1965</em>. Dimashq, 2002.</p>
+<p>Reinkowski, Maurus. <em>Die Dinge der Ordnung: eine vergleichende Untersuchung über die osmanische Reformpolitik im 19. Jahrhundert</em>. München: Oldenbourg, 2005.</p>
+<p>Ṭarrāzī, Fīlīb Dī. <em>Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā akhbār kull jarīda wa-majalla ʿarabiyya ẓaharat fī al-ʿālam sharqiyyan wa-gharbiyyan maʿa rusūm aṣḥābihā wa-l-muḥarrirīn fīhā wa-tarājim mashāhīrihim</em>. Vols. 1–3. Bayrūt: al-Maṭbaʿa al-adabiyya, 1913–14.</p>
+<p>—. <em>Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā jamīʻ fahāris al-jarāʾid wa-l-majallāt al-ʿarabiyya fī al-khāfiqīn mudh takwīn al-ṣiḥāfa al-ʿarabiyya ilā nihāyat ʿām 1929</em>. Vol. 4. Bayrūt: al-Maṭbaʿa al-amīrikāniyya, 1933.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>For the current specifications of the Extensible Markup Language (XML), Extensible Stylesheet Language Transformations (XSLT), and the XPath data model see <a href="http://www.w3.org/TR/xml11/" class="uri">http://www.w3.org/TR/xml11/</a>, <a href="http://www.w3.org/TR/xslt20/" class="uri">http://www.w3.org/TR/xslt20/</a>, and <a href="http://www.w3.org/TR/xpath-datamodel/" class="uri">http://www.w3.org/TR/xpath-datamodel/</a>. For the specification of the JavaScript Object Notation (JSON) see <a href="http://www.json.org/" class="uri">http://www.json.org/</a>. For the latest specifications of the Hypertext Markup Language (HTML) and Cascading Style Sheets (CSS) see <a href="http://www.w3.org/TR/html/" class="uri">http://www.w3.org/TR/html/</a> and <a href="http://www.w3.org/TR/CSS2/" class="uri">http://www.w3.org/TR/CSS2/</a>. For Exhibit 3.0 see <a href="http://simile-widgets.org/exhibit/" class="uri">http://simile-widgets.org/exhibit/</a> and section 4 below.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="http://www.w3.org/" class="uri">http://www.w3.org/</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>The “European Computer Manufacturers Association” (Ecma) changed its name into “Ecma International - European association for standardizing information and communication systems”. Its adoption of JSON as Standard ECMA-404 can found at <a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm/" class="uri">http://www.ecma-international.org/publications/standards/Ecma-404.htm/</a>.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Zotero is the only open and free reference manager in this list and supports Windows, OSX, and Linux. It can be downloaded at <a href="https://www.zotero.org/" class="uri">https://www.zotero.org/</a>. EndNote (<a href="http://endnote.com/" class="uri">http://endnote.com/</a>) is part of the Thomson Reuters publishing company and probably the most well-known and most widely adopted reference manager within academic institutions. It supports Windows, OSX, and iOS. Among those applications mentioned, Mendeley (<a href="http://www.mendeley.com/" class="uri">http://www.mendeley.com/</a>) supports the broadest range of operating systems (Windows, OSX, Linux, iOS) and emphasises the collaborative nature of academic reading practices, but its acquisition by the publishing company Elsevier in 2013 has been met with criticism. Citavi (<a href="http://www.citavi.com/" class="uri">http://www.citavi.com/</a>) is a Windows-only application, while BookEnds (<a href="http://www.sonnysoftware.com/" class="uri">http://www.sonnysoftware.com/</a>) and Sente (<a href="http://thirdstreetsoftware.com/" class="uri">http://thirdstreetsoftware.com/</a>) support only Apple’s OSX and iOS.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p><a href="http://www.oxygenxml.com/" class="uri">http://www.oxygenxml.com/</a><a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p><a href="https://github.com/tillgrallert/MappingOttomanDamascus2014/" class="uri">https://github.com/tillgrallert/MappingOttomanDamascus2014/</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>The code can found at <a href="https://github.com/tillgrallert/MappingOttomanDamascus2014" class="uri">https://github.com/tillgrallert/MappingOttomanDamascus2014</a>; a live example is hosted at <a href="https://tillgrallert.github.io/MappingOttomanDamascus2014/" class="uri">https://tillgrallert.github.io/MappingOttomanDamascus2014/</a>.<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p><em>Sūriye</em> was the official gazette of the province and the two other papers were owned and operated by the staff of the provincial printing press; Ami Ayalon, <em>The Press in the Arab Middle East: A History</em> (New York: Oxford University Press, 1995):28–46. For lists of published Arabic journals and newspapers see Fīlīb Dī Ṭarrāzī, <em>Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā akhbār kull jarīda wa-majalla ʿarabiyya ẓaharat fī al-ʿālam sharqiyyan wa-gharbiyyan maʿa rusūm aṣḥābihā wa-l-muḥarrirīn fīhā wa-tarājim mashāhīrihim</em>, Vol. 1-3, (Bayrūt: al-Maṭbaʿa al-adabiyya, 1914), Fīlīb Dī Ṭarrāzī, <em>Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā jamīʻ fahāris al-jarāʾid wa-l-majallāt al-ʿarabiyya fī al-khāfiqīn mudh takwīn al-ṣiḥāfa al-ʿarabiyya ilā nihāyat ʿām 1929</em>, Vol. 4, (Bayrūt: al-Maṭbaʿa al-amīrikāniyya, 1933), Mihyār ʿAdnān al-Mallūḥī, <em>Muʿjam al-jarāʾid al-sūriyya 1865-1965</em> (Dimashq, 2002).<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>The sample also includes some small print-runs of the Beiruti newspaper <em>al-Janna</em>, and the monthly journals <em>al-Jinān</em>, <em>al-Maḥabba</em>, and <em>al-Ḥasnāʾ</em>—also published in Beirut—as well as <em>al-Ḥaqāʾiq</em> and <em>al-Muqtabas</em> from Damascus.<a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>For more information on the sample, the publication history of individual titles, and the history of the press in late Ottoman Damascus and Beirut see Till Grallert, “To Whom Belong the Streets? Property, Propriety, and Appropriation: The Production of Public Space in Late Ottoman Damascus, 1875-1914,” (PhD diss., FU Berlin, Apr 2014):16–20, 40–94. My current research project is concerned with the genealogy of food riots in the Middle East between the eighteenth and twentieth centuries.<a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p>On the TEI see <a href="http://www.tei-c.org/index.xml" class="uri">http://www.tei-c.org/index.xml</a>. On the TEI P5 XML guidelines and schema see <a href="http://www.tei-c.org/Guidelines/P5/" class="uri">http://www.tei-c.org/Guidelines/P5/</a>.<a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p><a href="http://www.thirdstreetsoftware.com" class="uri">http://www.thirdstreetsoftware.com</a>.<a href="#fnref12">↩</a></p></li>
+<li id="fn13"><p><a href="http://www.sqlite.org" class="uri">http://www.sqlite.org</a>.<a href="#fnref13">↩</a></p></li>
+<li id="fn14"><p>This approach presupposes that by specifically focusing on news reports instead of opinion pieces and editorials or other canonical works, it is possible to grasp a broadly accepted everyday usage resonating with the contemporaneous reading audience as a matter-of-fact description. The focus here is the resilience of certain terms and the gradual shifts of semantics instead of the programmatic ruptures and utopian spaces of political ideologies.<a href="#fnref14">↩</a></p></li>
+<li id="fn15"><p>A computerised solution for this dilema in the form of natural entity recognition (NER) is presently only available for major European and East Asian languages. One of the most well-known ready-to-use implementations is the Standford NER, developed by The Stanford Natural Language Processing Group. It is destributed under GNU General Public License and can be downloaded from <a href="http://nlp.stanford.edu/software/CRF-NER.shtml" class="uri">http://nlp.stanford.edu/software/CRF-NER.shtml</a>.<a href="#fnref15">↩</a></p></li>
+<li id="fn16"><p>I wrote further XSLT stylesheets to extract every marked-up string, to process them, and to finally use them for a natural entity recognition, which, if run on the original Sente XML, automatically tags every occurrence of these strings with the appropriate mark-up.<a href="#fnref16">↩</a></p></li>
+<li id="fn17"><p>I made the stylesheet available at https://github.com/tillgrallert/MappingOttomanDamascus2014/.<a href="#fnref17">↩</a></p></li>
+<li id="fn18"><p>The organisation into strictly hierarchical XML nodes following administrative divisions on the ground is inherently ahistoric on the higher levels. Provinces (<em>vilāyet</em>), districts (<em>sancak</em>, <em>mütessarıflık</em>), and counties (<em>kaza</em>) were repeatedly reorganised and XML is particularly ill-suited to model such changes. Lower administrative units and the local spatial organisation into alleys, streets, neighbourhoods or quarters, on the other hand, were rather stable.<a href="#fnref18">↩</a></p></li>
+<li id="fn19"><p>On the TEI see <a href="http://www.tei-c.org/index.xml" class="uri">http://www.tei-c.org/index.xml</a>. On the TEI P5 XML guidelines and schema see <a href="http://www.tei-c.org/Guidelines/P5/" class="uri">http://www.tei-c.org/Guidelines/P5/</a>.<a href="#fnref19">↩</a></p></li>
+<li id="fn20"><p>The Pleiades project (<a href="http://pleiades.stoa.org/" class="uri">http://pleiades.stoa.org/</a>) is probably the most well-known. Pleiades+ extendes this gazetter with further toponyms from the GeoNames database (<a href="http://www.geonames.org/" class="uri">http://www.geonames.org/</a>). The Pelagios project (<a href="http://pelagios-project.blogspot.com/" class="uri">http://pelagios-project.blogspot.com/</a>), whose current phase will also include early Islamic sources, provides tools to tag any input source with historical toponyms provided by online gazetteers such as Pleiades. Another noteworthy example is the Index Anatolicus (<a href="http://nisanyanmap.com/" class="uri">http://nisanyanmap.com/</a>). See also Maxim Romanow, “al-Thurayya: an Islamic Supplement to Pleiades,” <em>al-Raqmiyyāt Blog</em>, 17 Mar 2014, <a href="http://alraqmiyyat.org/2014/03/al-thurayya-an-islamic-supplement-to-pleiades/" class="uri">http://alraqmiyyat.org/2014/03/al-thurayya-an-islamic-supplement-to-pleiades/</a>.<a href="#fnref20">↩</a></p></li>
+<li id="fn21"><p><a href="http://maps.google.com" class="uri">http://maps.google.com</a><a href="#fnref21">↩</a></p></li>
+<li id="fn22"><p><a href="http://maps.yahoo.com" class="uri">http://maps.yahoo.com</a><a href="#fnref22">↩</a></p></li>
+<li id="fn23"><p><a href="http://www.bing.com/maps" class="uri">http://www.bing.com/maps</a><a href="#fnref23">↩</a></p></li>
+<li id="fn24"><p><a href="http://www.openstreetmap.org" class="uri">http://www.openstreetmap.org</a><a href="#fnref24">↩</a></p></li>
+<li id="fn25"><p><a href="http://wikimapia.org" class="uri">http://wikimapia.org</a><a href="#fnref25">↩</a></p></li>
+<li id="fn26"><p><a href="http://www.geonames.org" class="uri">http://www.geonames.org</a><a href="#fnref26">↩</a></p></li>
+<li id="fn27"><p>For a list of available APIs and their various options see <a href="http://www.geonames.org/export/ws-overview.html" class="uri">http://www.geonames.org/export/ws-overview.html</a>.<a href="#fnref27">↩</a></p></li>
+<li id="fn28"><p>I made the stylesheet available at <a href="https://github.com/tillgrallert/MappingOttomanDamascus2014/" class="uri">https://github.com/tillgrallert/MappingOttomanDamascus2014/</a>.<a href="#fnref28">↩</a></p></li>
+<li id="fn29"><p>Note that it might be necessary to register for a free username as the allowed frequency for using the API is otherwise severely restricted. GeoNames provides the functionality to add further locations likely to be present within the research database. Through its “nearby?” API, one can search for various types of locations within a certain radius of any given point on the map, e.g. for mosques with a distance of less than 3 km from Marja Square, which would cover the entire area of Damascus in late Ottoman times.<a href="#fnref29">↩</a></p></li>
+<li id="fn30"><p>For instance, if not accompanied by the qualifier “Italy”, Google’s ChartWrapper maps “Naples” to Florida. ChartWrapper is part of the visualization API; <a href="https://developers.google.com/chart/interactive/docs/reference" class="uri">https://developers.google.com/chart/interactive/docs/reference</a>.<a href="#fnref30">↩</a></p></li>
+<li id="fn31"><p>Google Earth software is free to use and available for Windows, OSX, and Linux; <a href="http://www.google.com/earth" class="uri">http://www.google.com/earth</a>.<a href="#fnref31">↩</a></p></li>
+<li id="fn32"><p>KML was originally developed by Google as “Keyhole Markup Language” and then submitted to and approved by the Open Geospatial Consortium; <a href="http://www.opengeospatial.org/standards/kml/" class="uri">http://www.opengeospatial.org/standards/kml/</a>.<a href="#fnref32">↩</a></p></li>
+<li id="fn33"><p>I made the stylesheet available at <a href="https://github.com/tillgrallert/MappingOttomanDamascus2014/" class="uri">https://github.com/tillgrallert/MappingOttomanDamascus2014/</a>.<a href="#fnref33">↩</a></p></li>
+<li id="fn34"><p>I made the ontology of toponyms available at <a href="https://github.com/tillgrallert/OttomanDamascus/" class="uri">https://github.com/tillgrallert/OttomanDamascus/</a>.<a href="#fnref34">↩</a></p></li>
+<li id="fn35"><p>As this chapter is concerned with establishing mapping the correlation between the search criteria and geographic locations, the search queries to establish matching sub-samples of my database will not be covered here.<a href="#fnref35">↩</a></p></li>
+<li id="fn36"><p>I made the stylesheet available at <a href="https://github.com/tillgrallert/MappingOttomanDamascus2014/" class="uri">https://github.com/tillgrallert/MappingOttomanDamascus2014/</a>.<a href="#fnref36">↩</a></p></li>
+<li id="fn37"><p>Geographic names that involve some sort of personal names or group identities are usually prefixed by a typological specification or marked as female generic nouns: i.e. <em>maḥallat al-yahūd</em> (“the Jewish Quarter”), <em>jamīʿ mūrad bāshā</em> (“the Mosque of Murad Pasha), <em>al-dārwishiyya</em> (referring to the Mosque of Darwish Pasha), etc.<a href="#fnref37">↩</a></p></li>
+<li id="fn38"><p><a href="http://simile-widgets.org/exhibit/" class="uri">http://simile-widgets.org/exhibit/</a>. Apart from mapping, Exhibit provides search and filtering tools, as well as inter-active timelines. Simile widgets were originally developed by the MIT’s SIMILE project; <a href="http://simile.mit.edu/" class="uri">http://simile.mit.edu/</a>.<a href="#fnref38">↩</a></p></li>
+<li id="fn39"><p>See the second chapter and especially pp.92-94, 287-289 of Grallert, “To Whom Belong the Streets?”; c.f. Maurus Reinkowski, <em>Die Dinge der Ordnung: eine vergleichende Untersuchung über die osmanische Reformpolitik im 19. Jahrhundert</em> (München: Oldenbourg, 2005):233ff. for a discussion of the Ottoman terminology of law and order and how the discourse on <em>āsāyış</em> dwelled on the provision of security (<em>emeniyet</em>) for the purpose of general tranquillity and welfare (<em>rāḥat</em>, <em>istirāḥat</em>).<a href="#fnref39">↩</a></p></li>
+<li id="fn40"><p>This othering of Bedouins and Druze, as well as the population of the Ḥawrān also becomes evident by looking at the numbers of newspaper articles referring to these two groups in conjunction with violent events of some sort and those, which do not mention violence. For both groups the ratio is about two to one: Only one third of all articles referring to Bedouins and Druze did so in non-violent contexts.<a href="#fnref40">↩</a></p></li>
+<li id="fn41"><p>Thamarāt al-Funūn 14 Mar 1881 (#322)<a href="#fnref41">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>
