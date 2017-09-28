@@ -454,7 +454,7 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^38]: <http://simile-widgets.org/exhibit/>. Apart from mapping, Exhibit provides search and filtering tools, as well as inter-active timelines. Simile widgets were originally developed by the MIT's SIMILE project; <http://simile.mit.edu/>.
 
-[^39]: See the second chapter and especially pp.92-94, 287-289 of Grallert, "To Whom Belong the Streets?"; c.f. Maurus Reinkowski, *Die Dinge der Ordnung: eine vergleichende Untersuchung über die osmanische Reformpolitik im 19. Jahrhundert* (München: Oldenbourg, 2005):233ff. for a discussion of the Ottoman terminology of law and order and how the discourse on *āsāyış* dwelled on the provision of security (*emeniyet*) for the purpose of general tranquillity and welfare (*rāḥat*, *istirāḥat*).
+[^39]: See the second chapter and especially pp.92-94, 287-289 of Grallert, "To Whom Belong the Streets?"; c.f. Maurus Reinkowski, *Die Dinge der Ordnung: eine vergleichende Untersuchung über die osmanische Reformpolitik im 19. Jahrhundert* (München: Oldenbourg, 2005):233ff. For a discussion of the Ottoman terminology of law and order and how the discourse on *āsāyış* dwelled on the provision of security (*emeniyet*) for the purpose of general tranquillity and welfare (*rāḥa*, *istirāḥa*).
 
 [^40]: This othering of Bedouins and Druze, as well as the population of the Ḥawrān also becomes evident by looking at the numbers of newspaper articles referring to these two groups in conjunction with violent events of some sort and those, which do not mention violence. For both groups the ratio is about two to one: Only one third of all articles referring to Bedouins and Druze did so in non-violent contexts.
 
