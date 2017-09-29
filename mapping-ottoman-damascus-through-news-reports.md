@@ -5,8 +5,12 @@ date: 2017-09-17 18:23:28 +0300
 licence: http://creativecommons.org/licenses/by-nd/4.0/
 ORCID: orcid.org/0000-0002-5739-8094
 DOI: doi.org/10.5281/zenodo.893613
-markdown: pandoc
+markdown: 
+- pandoc
+- CriticMarkup
 ---
+
+>This paper was published as "Mapping Ottoman Damascus Through News Reports: A Practical Approach," in *Digital Humanities and Islamic & Middle East Studies*, ed. Elias Muhanna (Boston, Berlin: De Gruyter, 2015), pp. 175--198.
 
 <!-- # Introduction -->
 <pb n="175"/>
