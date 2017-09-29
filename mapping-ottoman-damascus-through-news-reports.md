@@ -81,7 +81,6 @@ Fig. 1 shows a list of chronologically sorted references in the upper section of
 ~~~
 
 Fig. 2, the same data as Sente XML.
-
 <pb n="182"/> 
 
 Each reference in the reference list of Fig. 1 is represented by a `<tss:reference>` node (also called "elements" in XML parlance). Inside this node one finds various child nodes that provide a detailed description of the reference: `<tss:dates>` and its descendants provide publication dates as well as timestamps for edits. Most of the bibliographic data is found in `<tss:characteristic>` nodes with a "name" attribute that describes their function: issue and volume numbers, publication and article titles, page numbers, place of publication as well as content. A `<tss:keyword>` node stores the tags and the link to the attached image of the article is provided in the `<tss:attachment>` node.
