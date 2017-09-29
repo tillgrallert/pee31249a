@@ -432,7 +432,7 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^27]: For a list of available APIs and their various options see <http://www.geonames.org/export/ws-overview.html>.
 
-[^28]: I made the stylesheet available at <https://github.com/tillgrallert/MappingOttomanDamascus2014/>.
+[^28]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^29]: Note that it might be necessary to register for a free username as the allowed frequency for using the API is otherwise severely restricted. GeoNames provides the functionality to add further locations likely to be present within the research database. Through its "nearby?" API, one can search for various types of locations within a certain radius of any given point on the map, e.g. for mosques with a distance of less than 3 km from Marja Square, which would cover the entire area of Damascus in late Ottoman times.
 
@@ -442,13 +442,13 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^32]: KML was originally developed by Google as "Keyhole Markup Language" and then submitted to and approved by the Open Geospatial Consortium; <http://www.opengeospatial.org/standards/kml/>.
 
-[^33]: I made the stylesheet available at <https://github.com/tillgrallert/MappingOttomanDamascus2014/>.
+[^33]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^34]: I made the ontology of toponyms available at <https://github.com/tillgrallert/OttomanDamascus/>.
 
 [^35]: As this chapter is concerned with establishing mapping the correlation between the search criteria and geographic locations, the search queries to establish matching sub-samples of my database will not be covered here.
 
-[^36]: I made the stylesheet available at <https://github.com/tillgrallert/MappingOttomanDamascus2014/>.
+[^36]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^37]: Geographic names that involve some sort of personal names or group identities are usually prefixed by a typological specification or marked as female generic nouns: i.e. *maḥallat al-yahūd* ("the Jewish Quarter"), *jamīʿ mūrad bāshā* ("the Mosque of Murad Pasha), *al-dārwishiyya* (referring to the Mosque of Darwish Pasha), etc.
 
