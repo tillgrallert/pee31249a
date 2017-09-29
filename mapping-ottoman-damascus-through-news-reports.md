@@ -390,7 +390,7 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^6]: <https://github.com/tillgrallert/MappingOttomanDamascus2014/>
 
-[^7]: The code can found at <https://github.com/tillgrallert/MappingOttomanDamascus2014>; a live example is hosted at <https://tillgrallert.github.io/MappingOttomanDamascus2014/>.
+[^7]: The code can found at <http://doi.org/10.5281/zenodo.183872>; a live example is hosted at <https://tillgrallert.github.io/MappingOttomanDamascus2014/>.
 
 [^8]: *Sūriye* was the official gazette of the province and the two other papers were owned and operated by the staff of the provincial printing press; Ami Ayalon, *The Press in the Arab Middle East: A History* (New York: Oxford University Press, 1995):28–46. For lists of published Arabic journals and newspapers see Fīlīb Dī Ṭarrāzī, *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā akhbār kull jarīda wa-majalla ʿarabiyya ẓaharat fī al-ʿālam sharqiyyan wa-gharbiyyan maʿa rusūm aṣḥābihā wa-l-muḥarrirīn fīhā wa-tarājim mashāhīrihim*, Vol. 1-3, (Bayrūt: al-Maṭbaʿa al-adabiyya, 1914), Fīlīb Dī Ṭarrāzī, *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā jamīʻ fahāris al-jarāʾid wa-l-majallāt al-ʿarabiyya fī al-khāfiqīn mudh takwīn al-ṣiḥāfa al-ʿarabiyya ilā nihāyat ʿām 1929*, Vol. 4, (Bayrūt: al-Maṭbaʿa al-amīrikāniyya, 1933), Mihyār ʿAdnān al-Mallūḥī, *Muʿjam al-jarāʾid al-sūriyya 1865-1965* (Dimashq, 2002).
 
@@ -410,7 +410,7 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^16]: I wrote further XSLT stylesheets to extract every marked-up string, to process them, and to finally use them for a natural entity recognition, which, if run on the original Sente XML, automatically tags every occurrence of these strings with the appropriate mark-up.
 
-[^17]: I made the stylesheet available at https://github.com/tillgrallert/MappingOttomanDamascus2014/.
+[^17]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^18]: The organisation into strictly hierarchical XML nodes following administrative divisions on the ground is inherently ahistoric on the higher levels. Provinces (*vilāyet*), districts (*sancak*, *mütessarıflık*), and counties (*kaza*) were repeatedly reorganised and XML is particularly ill-suited to model such changes. Lower administrative units and the local spatial organisation into alleys, streets, neighbourhoods or quarters, on the other hand, were rather stable.
 
