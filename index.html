@@ -49,190 +49,169 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <![endif]-->
   <style type="text/css">
   /* general settings for the whole page */
-    body {
-      background-color: white;
-      color: black;
-      /*font-family: Helvetica, Arial, sans-serif;*/
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      font-size: 18px;
-      line-height: 1.5em;
-      text-align: justify;
-      margin-left: auto;
-      margin-right: auto;
-      padding-right: 60px;
-      padding-left: 60px;
-      max-width: 800px;
-      min-width: 300px;
-      word-wrap: break-word;
-      /* counters */
-      counter-reset: p;
-    }
-    /* automatic numbering */
-    body > p{
-        counter-increment: p;
-    }
-    body > p:before {
-      content: "§ " counter(p) " ";
-      direction:ltr;
-      vertical-align:top;
-      font-size: 0.8em;
-      color: gray;
-      display: inline-block;
-      position: relative;
-      left: -60px;
-    }
-    /* section headings */
-    h1, h2, h3, h4, h5 {
-      font-family: "American Typewriter", sans-serif;
-      font-weight: lighter;
-    }
-    
-    /* spacing / padding between paragraphs */
-    p, ol, ul, li {
-      /*margin-left: 1em;*/
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
-      line-height: 1.5em;
-    }
-    div.footnotes p {
-      padding-bottom: 0;
-      padding-top: 0;
-    }
-    /* code */
-    code {
-      font-size: 14px;
-      line-height: 1;
-      padding-bottom: 0;
-      padding-top: 0;
-    }
-    
-    /* images */
-    
-    img {
-      width: 80%;
-      display: block;
-      margin-left: 10%;
-      margin-top: 1em;
-        background-color: rgba(0,0,0,0.04);
-        border-radius: 15px;
-        box-shadow: 2px 2px 5px #000;
-        border:gray solid 1px;
-    }
-    
-    /* what about captions? */
-    /* they are provided in @alt (inline images) and <figcaption/> (images separated by empty lines) */
-    /* if I render HMTL with Pandoc and Marked, images are rendered as <div class="figure">
-    <img src="img0030.jpg" alt="Fig. 1, Construction works at the new municipality." /><p class="caption">Fig. 1, Construction works at the new municipality.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
-    </div>
-     */
-    figure, 
-    div.figure {
-        width: 80%;
-        display: block;
-        clear: both;
-        margin-top: 1em;
-        margin-left: 10%;
-      }
-    figure > img, 
-    div.figure img {
-          width: 100%;
-          margin-left: 0;
-          margin-right: 0;
-          position: relative;
-          background-color: rgba(0,0,0,0.04);
-          border-radius: 15px;
-          box-shadow: 2px 2px 5px #000;
-          border:gray solid 1px;
-      }
-    figcaption,
-    p.caption {
-          width:100%;
-          position:relative;
-          display: block;
-          margin-top: 1em;
-          font-size:0.8em;
-          text-align: right;
-          font-weight:lighter;
-      }   
-      
-    /* tables */
-    
-    table {
-      border-collapse: collapse;
-      width:inherit;
-      padding-top: inherit;
-      padding-bottom: inherit;
-    }
-    
-    tr.header {
-      border-bottom: double black;
-    }
-    
-    td {
-      border-bottom: 1px solid black;
-      padding-bottom: 0.1em;
-      padding-top: 0.1em;
-    }
-    
-    /* links */
-    
-    a {
-      color: orange;
-      text-decoration: none;
-    }
-    
-    a:visited {
-      color: #AB1733;
-      text-decoration: none;
-    }
-    
-    a:hover, a:active {
-      color: #E62347;
-      text-decoration: underline;
-    }
-    /* footnotes */
-    a.footnote {
-      font-size: 0.7em;
-      vertical-align: super;
-      display: inline-block;
-      padding-left: 0.3em;
-    }
-    /* in case of transcriptions, the html might contain pb elements to indicate page breaks in the original */
-    pb:before {
-        content: " [page " attr(n) "] ";
-        font-size: 0.5em;
-        color:#959595;
-        vertical-align: top;
-        position: relative;
-        display: block;
-        padding: 0.5em;
-      }
-  
-  /* navigation */
-  /* add button */
-  nav:before {
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    content: "\2261";
-    font-size: 40px;
-    /*background-color: #E3DFE0;*/
-    border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  box-sizing: border-box;
-  cursor: pointer;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  transition: 0.8s;
+  body {
+    background-color: white;
+    color: black;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 18px;
+    line-height: 1.5em;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 60px;
+    padding-left: 60px;
+    max-width: 800px;
+    min-width: 300px;
+    word-wrap: break-word;
+    /* counters */
+    counter-reset: p;
+  }
+  /* automatic numbering */
+  body > p{
+    counter-increment: p;
+  }
+  body > p:before {
+    content: "§ " counter(p) " ";
+    direction:ltr;
+    vertical-align:top;
+    font-size: 0.8em;
+    color: gray;
+    display: inline-block;
+    position: relative;
+    left: -60px;
+  }
+  /* section headings */
+  h1, h2, h3, h4, h5 {
+    font-family: "American Typewriter", sans-serif;
+    font-weight: lighter;
+    margin-top: 1em;
+    line-height: 1.2em;
+    text-align: center;
   }
   
+  /* spacing / padding between paragraphs */
+  p, ol, ul, li {
+    /*margin-left: 1em;*/
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    line-height: 1.5em;
+  }
+  div.footnotes p {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  /* code */
+  code {
+    font-size: 14px;
+    line-height: 1;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  
+  /* images */
+  
+  img {
+    width: 80%;
+    display: block;
+    margin-left: 10%;
+    margin-top: 1em;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px #000;
+    border:gray solid 1px;
+  }
+  
+  /* what about captions? */
+  /* they are provided in @alt (inline images) and <figcaption/> (images separated by empty lines) */
+  /* if I render HMTL with Pandoc and Marked, images are rendered as <div class="figure">
+  <img src="img0030.jpg" alt="Fig. 1, Construction works at the new municipality." /><p class="caption">Fig. 1, Construction works at the new municipality.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+  </div>
+  */
+  figure, 
+  div.figure {
+    width: 80%;
+    display: block;
+    clear: both;
+    margin-top: 1em;
+    margin-left: 10%;
+  }
+  figure > img, 
+  div.figure img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px #000;
+    border:gray solid 1px;
+  }
+  figcaption,
+  p.caption {
+    width:100%;
+    position:relative;
+    display: block;
+    margin-top: 1em;
+    font-size:0.8em;
+    text-align: right;
+    font-weight:lighter;
+  }   
+  
+  /* tables */
+  
+  table {
+    border-collapse: collapse;
+    width:inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+  }
+  
+  tr.header {
+    border-bottom: double black;
+  }
+  
+  td {
+    border-bottom: 1px solid black;
+    padding-bottom: 0.1em;
+    padding-top: 0.1em;
+  }
+  
+  /* links */
+  
+  a {
+    color: orange;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #AB1733;
+    text-decoration: none;
+  }
+  
+  a:hover, a:active {
+    color: #E62347;
+    text-decoration: underline;
+  }
+  /* footnotes */
+  a.footnote {
+    font-size: 0.7em;
+    vertical-align: super;
+    display: inline-block;
+    padding-left: 0.3em;
+  }
+  /* in case of transcriptions, the html might contain pb elements to indicate page breaks in the original */
+  pb:before {
+    content: " [page " attr(n) "] ";
+    font-size: 0.5em;
+    color:#959595;
+    vertical-align: top;
+    position: relative;
+    display: block;
+    padding: 0.5em;
+  }
+  
+  /* navigation */
   nav {
     display: block;
     position: fixed;
@@ -245,6 +224,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     padding-left: 10px;
     padding-right: 10px;
     font-size: 0.8em;
+    text-align: left;
   }
   
   nav {
@@ -252,14 +232,52 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   }
   nav,
   nav:before {
-    background-color: #F0ECEC;
+    /*background-color: #F0ECEC;*/
+    background-color:#AB1733; 
   }
+  nav *,
+  nav:before {
+    color:white;
+  }
+  nav a:visited,
+  nav a:hover,
+  nav a:active {
+    color:white;
+    text-decoration: none;
+  }
+  /* add button */
+  nav:before {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left: 0px;
+    top: 20px;
+    content: "\2261";
+    font-size: 40px;
+    /*background-color: #E3DFE0;*/
+    /*border-bottom-left-radius: 5px;*/
+    border-bottom-right-radius: 5px;
+    /*border-top-left-radius: 5px;*/
+    border-top-right-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    transition: 0.5s;
+  }
+  /*hover state*/
   nav:hover {
     left: 0px;
     top: 0px;
   }
   nav:hover:before {
-    left: -50px;
+    left: 320px;
+  }
+  nav li {
+    list-style: none;
   }
   
   /* show urls in print */
