@@ -1,12 +1,17 @@
 --- 
 title: "Mapping Ottoman Damascus through News Reports: A practical approach" 
 author: Till Grallert 
-date: 2017-09-17 18:23:28 +0300 
+date: 2017-09-30 21:43:51 +0300
 licence: http://creativecommons.org/licenses/by-nd/4.0/
 ORCID: orcid.org/0000-0002-5739-8094
 DOI: doi.org/10.5281/zenodo.893613
-markdown: pandoc
+markdown: 
+- pandoc
+- CriticMarkup
+include-after: <footer><span class="c_info c_license"><a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.</span></footer>
 ---
+
+>This paper was published as "Mapping Ottoman Damascus Through News Reports: A Practical Approach," in *Digital Humanities and Islamic & Middle East Studies*, ed. Elias Muhanna (Boston, Berlin: De Gruyter, 2015), pp. 175--198.
 
 <!-- # Introduction -->
 <pb n="175"/>
@@ -28,7 +33,7 @@ My research into the history of public space(s) and contentious repertoires is b
 
 Meta-data, including excerpts, partial transcriptions and translations, and images of all articles were manually entered into a relational database parallel to and during the reading at libraries and archives. This process included some semantic mark-up of persons and locations with simple XML tags (`<persName>` and `<placeName>`), which happen to conform to the Text Encoding Initiative's flavor of XML (TEI P5).[^11] In a second step, every article was coded with keywords for topic, type of publication, referenced locations etc.
 
-Due to its ease of use and easy customisation of the underlying database as well as the graphic user interface (GUI), I employ the off-the-shelf reference managing software Sente running on Apple's OS X and iOS operating systems.[^12] Sente stores all data in an open-source SQLite database,[^13] which can be queried through Sente's GUI or any tool able to manipulate SQLite databases. Individual references can be tagged and tags can be organised in hierarchical ontologies. In addition, the entire database or the result of any query can be exported as an XML file. Using proprietary software always poses the danger of trapping one's most valuable asset, the research data. Sente's reliance on an open-source database for storing the data and the possibility to export all data in a well-understood, structured, and open format, such as XML, ensures that the research data can be accessed without any loss of information at any given moment and without continued access to Sente itself. For the purpose of the present <pb n="180"/> paper, the basis for all further manipulations and processing of data is the Sente-generated XML output.
+Due to its ease of use and easy customisation of the underlying database as well as the graphic user interface (GUI), I employ the off-the-shelf reference managing software [Sente](http://www.thirdstreetsoftware.com) running on Apple's OS X and iOS operating systems.[^12] Sente stores all data in an open-source [SQLite](http://www.sqlite.org.) database,[^13] which can be queried through Sente's GUI or any tool able to manipulate SQLite databases. Individual references can be tagged and tags can be organised in hierarchical ontologies. In addition, the entire database or the result of any query can be exported as an XML file. Using proprietary software always poses the danger of trapping one's most valuable asset, the research data. Sente's reliance on an open-source database for storing the data and the possibility to export all data in a well-understood, structured, and open format, such as XML, ensures that the research data can be accessed without any loss of information at any given moment and without continued access to Sente itself. For the purpose of the present <pb n="180"/> paper, the basis for all further manipulations and processing of data is the Sente-generated XML output.
 
 Fig.1 and 2 show the same information---an article from an anonymous reader-cum-correspondent of the Beiruti newspaper *Lisān al-Ḥāl* in Damascus dated 31 May and published on 5 June 1884 reporting on bandits (*ashqiyāʾ*) from the quarter of Mīdān attacking a caravan from the Jabal Ḥawrān just outside the city gates---within Sente's GUI and as XML export.
 
@@ -99,7 +104,7 @@ In order to display places on a map, toponyms must be associated with locations,
 ## 2.1 Extracting the toponyms and organizing a hierarchy of places
 
 In a best-case scenario, the semantic mark-up of the research data would already differentiate between the personal name "Paris" and the toponym
-"Paris", to use a common example. More precisely, the semantic mark-up would differentiate between all individual persons named "Paris", such as the well-known heiress to the Hilton hotel chain, and places of the same name, such as the capital of France. On the other hand, such mark-up would also go beyond the literal string in Latin script and note that an Arabic reference to *bārīs* in the newspaper *Lisān al-Ḥāl* concerned the latter. Yet, the most common scenario for historians of the Middle East, as outlined in section 1, are databases with partially implemented semantic mark-up and an inconsistent tagging ontology.
+"Paris", to use a common example. More precisely, the semantic mark-up would differentiate between all individual persons named "Paris", such as the well-known heiress to the Hilton hotel chain, and places of the same name, such as the capital of France. On the other hand, such mark-up would also go beyond the literal string in Latin script and note that an Arabic reference to *bārīs* in the newspaper *Lisān al-Ḥāl* concerned the latter. Yet, the most common scenario for historians of the Middle East, as outlined in [section one](#sec-sources), are databases with partially implemented semantic mark-up and an inconsistent tagging ontology.
 
 Thus, an ontology of places, including all their known names in the languages relevant to the research project, was established by:
 
@@ -109,7 +114,7 @@ Thus, an ontology of places, including all their known names in the languages re
 
 The resulting list of places was then organized into a hierarchy following the Ottoman administrative divisions at use during the time under study and local spatial organization as presented in the sources themselves (i.e. the neighbourhood of ... in the quarter of ... in the *thamn*/ *nāḥiye* of ... ).[^18]
 
-Following the general considerations as to the preference of open and widely accepted standards, and the availability of the research data as an XML file, the ontology of places was also implemented in XML. There are myriads of XML schemas for storing and processing geographical data. I chose to implement the ontology in the Text Encoding Initiative's TEI P5 XML flavor, due to my familiarity with it. TEI is specifically tailored to the semantic mark-up of textual sources and <pb n="185"/> offers full support of Unicode characters. It is also the quasi-standard for many digital edition projects, which made it a natural choice.[^19]
+Following the general considerations as to the preference of open and widely accepted standards, and the availability of the research data as an XML file, the ontology of places was also implemented in XML. There are myriads of XML schemas for storing and processing geographical data. I chose to implement the ontology in the [Text Encoding Initiative](http://www.tei-c.org/index.xml)'s TEI P5 XML flavor, due to my familiarity with it. TEI is specifically tailored to the semantic mark-up of textual sources and <pb n="185"/> offers full support of Unicode characters. It is also the quasi-standard for many digital edition projects, which made it a natural choice.[^19]
 
 TEI P5 provides a `<listPlace>` container element, which can contain further `<listPlace>` and `<place>` elements that allow for a representation of administrative divisions. Each `<place>` element should contain at least one `<placeName>` element, specifying the toponym, and a `<location>` element to record information on the geographic location, such as a postal address, or, in our case, a combination of latitude and longitude values. As we have no information on the locations yet, the `<location>` tag will be populated in the next step.
 
@@ -136,7 +141,7 @@ Fig. 3, various known toponyms for the city of Damascus, recorded in a hierarchi
 
 ## 2.2 Geocoding the places
 
-While there is no shortage of gazetteers of toponyms and their respective locations on the planet for the contemporary world and for languages written in Latin script, and while there are notable efforts to provide such tools for the study of the Roman and Hellenistic worlds of antiquity,[^20] such historical gazet<pb n="186"/>eers are completely absent for the Ottoman Empire, *Bilād al-Shām*, and the larger Eastern Mediterranean between antiquity and the twentieth century. Therefore, the places established in 2.1 had to be either manually geocoded using a paper map or through one of the ubiquitous online mapping tools such as the commercial services offered by Google,[^21] Yahoo,[^22] or Microsoft[^23] and the non-profit and community-driven projects of OpenStreetMap[^24] and WikiMapia,[^25] to name but a few. In addition, one can query online databases, such as GeoNames,[^26] for the locations of toponyms.
+While there is no shortage of gazetteers of toponyms and their respective locations on the planet for the contemporary world and for languages written in Latin script, and while there are notable efforts to provide such tools for the study of the Roman and Hellenistic worlds of antiquity,[^20] such historical gazet<pb n="186"/>eers are completely absent for the Ottoman Empire, *Bilād al-Shām*, and the larger Eastern Mediterranean between antiquity and the twentieth century. Therefore, the places established in 2.1 had to be either manually geocoded using a paper map or through one of the ubiquitous online mapping tools such as the commercial services offered by [Google](http://maps.google.com),[^21] [Yahoo](http://maps.yahoo.com),[^22] or [Microsoft](http://www.bing.com/maps)[^23] and the non-profit and community-driven projects of [OpenStreetMap](http://www.openstreetmap.org)[^24] and [WikiMapia](http://wikimapia.org),[^25] to name but a few. In addition, one can query online databases, such as [GeoNames](http://www.geonames.org),[^26] for the locations of toponyms.
 
 Due to the (still growing) number of places in a never finished research database and the aspired future interoperability of the ontology with the semantic web, (semi-)automatic geocoding was preferred over purely manual coding. GeoNames is licensed under a creative-commons attribution license, free to use, and provides full-Unicode support, including Arabic. The database can be downloaded in its entirety or queried through a large number of application programming interfaces (APIs) that return data as XML.[^27] This made GeoNames the perfect choice for the task at hand.
 
@@ -214,7 +219,7 @@ The information on the location and additional toponyms is extracted from the `<
 
 Fig. 5, updated TEI ontology of places.
 
-While GeoNames commonly returns correct results and avoids the bias for locations within the United States shown by Google's and other mapping tools,[^30] the correct location must be manually confirmed in cases of two or more locations with a similar name. In addition, many smaller locations or places not longer existing, such as neighbourhoods and Suqs inside the city of Damascus, are not (yet) listed in the database. To correct the data and quickly retrieve geo-spatial data for visually established locations, I employ Google Earth,[^31] which can ingest data from XML files adhering to the KML standard.[^32] A simple XSLT stylesheet maps the TEI XML of Fig. 5 to a KML file, which can then be imported into Google Earth[^33]{~~:~> (Figure 8.6).~~}
+While GeoNames commonly returns correct results and avoids the bias for locations within the United States shown by Google's and other mapping tools,[^30] the correct location must be manually confirmed in cases of two or more locations with a similar name. In addition, many smaller locations or places not longer existing, such as neighbourhoods and Suqs inside the city of Damascus, are not (yet) listed in the database. To correct the data and quickly retrieve geo-spatial data for visually established locations, I employ [Google Earth](http://www.google.com/earth),[^31] which can ingest data from XML files adhering to the KML standard.[^32] A simple XSLT stylesheet maps the TEI XML of Fig. 5 to a KML file, which can then be imported into Google Earth[^33]{~~:~> (Figure 8.6).~~}
 
 ~~~{.xml}
 <kml:kml xmlns:kml="http://earth.google.com/kml/2.0">
@@ -258,7 +263,7 @@ Some false positives can be averted based on linguistic structures and our knowl
 
 # 4. Visualising / mapping the data {#sec-mapping}
 
-The final task is to visualise the correlations between topics/vocabularies and locations on a map and in a meaningful way, such as colour and/or size. The tool chosen for visualising the data is the free and open-source Exihibit 3.0 SIMILE widget (Exhibit), which, inter alia, provides a JavaScript mapping tool that can display locations and additional information on base layers provided by Google maps and, through additional plug-ins, OpenStreetMap in any modern web-browser.[^38] Thus, it utilises available programs and server-side computing instead of providing another layer of complexity through additional software. All it needs is a HTML page that calls the Exhibit JavaScript framework and a JSON data source in its header {++(Figure 8.7)++}. The display is then manipulated right inside the HTML code by a small variety of commands specific to Exhibit and can be styled with regular CSS. The only shortcoming of this solution is that the ease of use requires continuous internet access.
+The final task is to visualise the correlations between topics/vocabularies and locations on a map and in a meaningful way, such as colour and/or size. The tool chosen for visualising the data is the free and open-source [Exhibit 3.0 SIMILE widget](http://simile-widgets.org/exhibit/) (henceforth Exhibit), which, inter alia, provides a JavaScript mapping tool that can display locations and additional information on base layers provided by Google maps and, through additional plug-ins, OpenStreetMap in any modern web-browser.[^38] Thus, it utilises available programs and server-side computing instead of providing another layer of complexity through additional software. All it needs is a HTML page that calls the Exhibit JavaScript framework and a JSON data source in its header {++(Figure 8.7)++}. The display is then manipulated right inside the HTML code by a small variety of commands specific to Exhibit and can be styled with regular CSS. The only shortcoming of this solution is that the ease of use requires continuous internet access.
 
 ~~~{.html}
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ex="http://api.simile-widgets.org/exhibit/3.0.0/">
@@ -389,7 +394,7 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^6]: <https://github.com/tillgrallert/MappingOttomanDamascus2014/>
 
-[^7]: The code can found at <https://github.com/tillgrallert/MappingOttomanDamascus2014>; a live example is hosted at <https://tillgrallert.github.io/MappingOttomanDamascus2014/>.
+[^7]: The code can found at <http://doi.org/10.5281/zenodo.183872>; a live example is hosted at <https://tillgrallert.github.io/MappingOttomanDamascus2014/>.
 
 [^8]: *Sūriye* was the official gazette of the province and the two other papers were owned and operated by the staff of the provincial printing press; Ami Ayalon, *The Press in the Arab Middle East: A History* (New York: Oxford University Press, 1995):28–46. For lists of published Arabic journals and newspapers see Fīlīb Dī Ṭarrāzī, *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā akhbār kull jarīda wa-majalla ʿarabiyya ẓaharat fī al-ʿālam sharqiyyan wa-gharbiyyan maʿa rusūm aṣḥābihā wa-l-muḥarrirīn fīhā wa-tarājim mashāhīrihim*, Vol. 1-3, (Bayrūt: al-Maṭbaʿa al-adabiyya, 1914), Fīlīb Dī Ṭarrāzī, *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā jamīʻ fahāris al-jarāʾid wa-l-majallāt al-ʿarabiyya fī al-khāfiqīn mudh takwīn al-ṣiḥāfa al-ʿarabiyya ilā nihāyat ʿām 1929*, Vol. 4, (Bayrūt: al-Maṭbaʿa al-amīrikāniyya, 1933), Mihyār ʿAdnān al-Mallūḥī, *Muʿjam al-jarāʾid al-sūriyya 1865-1965* (Dimashq, 2002).
 
@@ -409,13 +414,13 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^16]: I wrote further XSLT stylesheets to extract every marked-up string, to process them, and to finally use them for a natural entity recognition, which, if run on the original Sente XML, automatically tags every occurrence of these strings with the appropriate mark-up.
 
-[^17]: I made the stylesheet available at https://github.com/tillgrallert/MappingOttomanDamascus2014/.
+[^17]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^18]: The organisation into strictly hierarchical XML nodes following administrative divisions on the ground is inherently ahistoric on the higher levels. Provinces (*vilāyet*), districts (*sancak*, *mütessarıflık*), and counties (*kaza*) were repeatedly reorganised and XML is particularly ill-suited to model such changes. Lower administrative units and the local spatial organisation into alleys, streets, neighbourhoods or quarters, on the other hand, were rather stable.
 
 [^19]: On the TEI see <http://www.tei-c.org/index.xml>. On the TEI P5 XML guidelines and schema see <http://www.tei-c.org/Guidelines/P5/>.
 
-[^20]: The Pleiades project (<http://pleiades.stoa.org/>) is probably the most well-known. Pleiades+ extendes this gazetter with further toponyms from the GeoNames database (<http://www.geonames.org/>). The Pelagios project (<http://pelagios-project.blogspot.com/>), whose current phase will also include early Islamic sources, provides tools to tag any input source with historical toponyms provided by online gazetteers such as Pleiades. Another noteworthy example is the Index Anatolicus (<http://nisanyanmap.com/>). See also Maxim Romanow, "al-Thurayya: an Islamic Supplement to Pleiades," *al-Raqmiyyāt Blog*, 17 Mar 2014, <http://alraqmiyyat.org/2014/03/al-thurayya-an-islamic-supplement-to-pleiades/>.
+[^20]: The [Pleiades project](http://pleiades.stoa.org/) is probably the most well-known. Pleiades+ extends this gazetter with further toponyms from the [GeoNames database](http://www.geonames.org/). The [Pelagios project](http://pelagios-project.blogspot.com/), whose current phase will also include early Islamic sources, provides tools to tag any input source with historical toponyms provided by online gazetteers such as Pleiades. Another noteworthy example is the [Index Anatolicus](http://nisanyanmap.com/). See also Maxim Romanow, "al-Thurayya: an Islamic Supplement to Pleiades," *al-Raqmiyyāt Blog*, 17 Mar 2014, <http://alraqmiyyat.org/2014/03/al-thurayya-an-islamic-supplement-to-pleiades/>.
 
 [^21]: <http://maps.google.com>
 
@@ -431,7 +436,7 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^27]: For a list of available APIs and their various options see <http://www.geonames.org/export/ws-overview.html>.
 
-[^28]: I made the stylesheet available at <https://github.com/tillgrallert/MappingOttomanDamascus2014/>.
+[^28]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^29]: Note that it might be necessary to register for a free username as the allowed frequency for using the API is otherwise severely restricted. GeoNames provides the functionality to add further locations likely to be present within the research database. Through its "nearby?" API, one can search for various types of locations within a certain radius of any given point on the map, e.g. for mosques with a distance of less than 3 km from Marja Square, which would cover the entire area of Damascus in late Ottoman times.
 
@@ -441,17 +446,17 @@ Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung übe
 
 [^32]: KML was originally developed by Google as "Keyhole Markup Language" and then submitted to and approved by the Open Geospatial Consortium; <http://www.opengeospatial.org/standards/kml/>.
 
-[^33]: I made the stylesheet available at <https://github.com/tillgrallert/MappingOttomanDamascus2014/>.
+[^33]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^34]: I made the ontology of toponyms available at <https://github.com/tillgrallert/OttomanDamascus/>.
 
 [^35]: As this chapter is concerned with establishing mapping the correlation between the search criteria and geographic locations, the search queries to establish matching sub-samples of my database will not be covered here.
 
-[^36]: I made the stylesheet available at <https://github.com/tillgrallert/MappingOttomanDamascus2014/>.
+[^36]: Stylesheets are available at <http://doi.org/10.5281/zenodo.183872>.
 
 [^37]: Geographic names that involve some sort of personal names or group identities are usually prefixed by a typological specification or marked as female generic nouns: i.e. *maḥallat al-yahūd* ("the Jewish Quarter"), *jamīʿ mūrad bāshā* ("the Mosque of Murad Pasha), *al-dārwishiyya* (referring to the Mosque of Darwish Pasha), etc.
 
-[^38]: <http://simile-widgets.org/exhibit/>. Apart from mapping, Exhibit provides search and filtering tools, as well as inter-active timelines. Simile widgets were originally developed by the MIT's SIMILE project; <http://simile.mit.edu/>.
+[^38]: {--<http://simile-widgets.org/exhibit/>. --}Apart from mapping, Exhibit provides search and filtering tools, as well as inter-active timelines. Simile widgets were originally developed by the MIT's [SIMILE project](http://simile.mit.edu/).
 
 [^39]: See the second chapter and especially pp.92-94, 287-289 of Grallert, "To Whom Belong the Streets?"; c.f. Maurus Reinkowski, *Die Dinge der Ordnung: eine vergleichende Untersuchung über die osmanische Reformpolitik im 19. Jahrhundert* (München: Oldenbourg, 2005):233ff. For a discussion of the Ottoman terminology of law and order and how the discourse on *āsāyış* dwelled on the provision of security (*emeniyet*) for the purpose of general tranquillity and welfare (*rāḥa*, *istirāḥa*).
 
