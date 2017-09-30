@@ -1,7 +1,7 @@
 --- 
 title: "Mapping Ottoman Damascus through News Reports: A practical approach" 
 author: Till Grallert 
-date: 2017-09-17 18:23:28 +0300 
+date: 2017-09-30 21:43:51 +0300
 licence: http://creativecommons.org/licenses/by-nd/4.0/
 ORCID: orcid.org/0000-0002-5739-8094
 DOI: doi.org/10.5281/zenodo.893613
@@ -104,7 +104,7 @@ In order to display places on a map, toponyms must be associated with locations,
 ## 2.1 Extracting the toponyms and organizing a hierarchy of places
 
 In a best-case scenario, the semantic mark-up of the research data would already differentiate between the personal name "Paris" and the toponym
-"Paris", to use a common example. More precisely, the semantic mark-up would differentiate between all individual persons named "Paris", such as the well-known heiress to the Hilton hotel chain, and places of the same name, such as the capital of France. On the other hand, such mark-up would also go beyond the literal string in Latin script and note that an Arabic reference to *bārīs* in the newspaper *Lisān al-Ḥāl* concerned the latter. Yet, the most common scenario for historians of the Middle East, as outlined in section 1, are databases with partially implemented semantic mark-up and an inconsistent tagging ontology.
+"Paris", to use a common example. More precisely, the semantic mark-up would differentiate between all individual persons named "Paris", such as the well-known heiress to the Hilton hotel chain, and places of the same name, such as the capital of France. On the other hand, such mark-up would also go beyond the literal string in Latin script and note that an Arabic reference to *bārīs* in the newspaper *Lisān al-Ḥāl* concerned the latter. Yet, the most common scenario for historians of the Middle East, as outlined in [section one](#sec-sources), are databases with partially implemented semantic mark-up and an inconsistent tagging ontology.
 
 Thus, an ontology of places, including all their known names in the languages relevant to the research project, was established by:
 
@@ -114,7 +114,7 @@ Thus, an ontology of places, including all their known names in the languages re
 
 The resulting list of places was then organized into a hierarchy following the Ottoman administrative divisions at use during the time under study and local spatial organization as presented in the sources themselves (i.e. the neighbourhood of ... in the quarter of ... in the *thamn*/ *nāḥiye* of ... ).[^18]
 
-Following the general considerations as to the preference of open and widely accepted standards, and the availability of the research data as an XML file, the ontology of places was also implemented in XML. There are myriads of XML schemas for storing and processing geographical data. I chose to implement the ontology in the Text Encoding Initiative's TEI P5 XML flavor, due to my familiarity with it. TEI is specifically tailored to the semantic mark-up of textual sources and <pb n="185"/> offers full support of Unicode characters. It is also the quasi-standard for many digital edition projects, which made it a natural choice.[^19]
+Following the general considerations as to the preference of open and widely accepted standards, and the availability of the research data as an XML file, the ontology of places was also implemented in XML. There are myriads of XML schemas for storing and processing geographical data. I chose to implement the ontology in the [Text Encoding Initiative](http://www.tei-c.org/index.xml)'s TEI P5 XML flavor, due to my familiarity with it. TEI is specifically tailored to the semantic mark-up of textual sources and <pb n="185"/> offers full support of Unicode characters. It is also the quasi-standard for many digital edition projects, which made it a natural choice.[^19]
 
 TEI P5 provides a `<listPlace>` container element, which can contain further `<listPlace>` and `<place>` elements that allow for a representation of administrative divisions. Each `<place>` element should contain at least one `<placeName>` element, specifying the toponym, and a `<location>` element to record information on the geographic location, such as a postal address, or, in our case, a combination of latitude and longitude values. As we have no information on the locations yet, the `<location>` tag will be populated in the next step.
 
