@@ -16,7 +16,7 @@ include-after: <footer><span class="c_info c_license"><a rel="license" href="htt
 
 This paper was published as "Mapping Ottoman Damascus Through News Reports: A Practical Approach," in *Digital Humanities and Islamic & Middle East Studies*, ed. Elias Muhanna (Boston, Berlin: De Gruyter, 2015), pp. 175--198.
 
-To comment / review / annotate this paper via hypothes.is click [here](https://via.hypothes.is/https://rawgit.com/tillgrallert/name-of-repository/gh-pages/index.html)
+To comment / review / annotate this paper via hypothes.is click [here](https://via.hypothes.is/https://rawgit.com/tillgrallert/pee31249a/gh-pages/index.html)
 
 # [Introduction]
 
