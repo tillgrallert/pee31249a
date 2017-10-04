@@ -48,300 +48,316 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
   <style type="text/css">
-      /* general settings for the whole page */
-     body,
-     footer,
-     header {
-        display: block;
-        background-color: white;
-        color: black;
-      }
-      body {
-        /*font-family: Helvetica, Arial, sans-serif;*/
-        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-        font-size: 18px;
-        line-height: 1.5em;
-        text-align: justify;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 60px;
-        padding-left: 60px;
-        max-width: 800px;
-        min-width: 300px;
-        word-wrap: break-word;
-        /* counters */
-        counter-reset: p;
-      }
-      /* automatic numbering */
-      body > p{
-        counter-increment: p;
-      }
-      body > p:before {
-        content: "§ " counter(p) " ";
-        direction:ltr;
-        vertical-align:top;
-        font-size: 0.8em;
-        color: gray;
-        display: inline-block;
-        position: relative;
-        left: -60px;
-      }
-      /* section headings */
-      h1, h2, h3, h4, h5 {
-        font-family: "American Typewriter", sans-serif;
-        font-weight: lighter;
-        margin-top: 1em;
-        line-height: 1.2em;
-        text-align: center;
-      }
-      
-      /* spacing / padding between paragraphs */
-      p, ol, ul, li {
-        /*margin-left: 1em;*/
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        line-height: 1.5em;
-        margin-block-start:1em;
-      }
-      div.footnotes p {
-        padding-bottom: 0;
-        padding-top: 0;
-      }
-      /* code */
-      code {
-        font-size: 14px;
-        line-height: 1;
-        padding-bottom: 0;
-        padding-top: 0;
-      }
-      
-      /* images */
-      
-      img {
-        width: 80%;
-        display: block;
-        margin-left: 10%;
-        margin-top: 1em;
-        background-color: rgba(0,0,0,0.04);
-        border-radius: 15px;
-        box-shadow: 2px 2px 5px #000;
-        border:gray solid 1px;
-      }
-      
-      /* what about captions? */
-      /* they are provided in @alt (inline images) and <figcaption/> (images separated by empty lines) */
-      /* if I render HMTL with Pandoc and Marked, images are rendered as <div class="figure">
-      <img src="img0030.jpg" alt="Fig. 1, Construction works at the new municipality." /><p class="caption">Fig. 1, Construction works at the new municipality.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
-      </div>
-      */
-      figure, 
-      div.figure {
-        width: 80%;
-        display: block;
-        clear: both;
-        margin-top: 1em;
-        margin-left: 10%;
-      }
-      figure > img, 
-      div.figure img {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        position: relative;
-        background-color: rgba(0,0,0,0.04);
-        border-radius: 15px;
-        box-shadow: 2px 2px 5px #000;
-        border:gray solid 1px;
-      }
-      figcaption,
-      p.caption {
-        width:100%;
-        position:relative;
-        display: block;
-        margin-top: 1em;
-        font-size:0.8em;
-        text-align: right;
-        font-weight:lighter;
-      }   
-      
-      /* tables */
-      
-      table {
-        border-collapse: collapse;
-        width:inherit;
-        padding-top: inherit;
-        padding-bottom: inherit;
-      }
-      
-      tr.header {
-        border-bottom: double black;
-      }
-      
-      td {
-        border-bottom: 1px solid black;
-        padding-bottom: 0.1em;
-        padding-top: 0.1em;
-      }
-      
-      /* links */
-      
-      a {
-        color: orange;
-        text-decoration: none;
-      }
-      
-      a:visited {
-        color: #AB1733;
-        text-decoration: none;
-      }
-      
-      a:hover, a:active {
-        color: #E62347;
-        text-decoration: underline;
-      }
-      /* footnotes */
-      a.footnote {
-        font-size: 0.7em;
-        vertical-align: super;
-        display: inline-block;
-        padding-left: 0.3em;
-      }
-      /* in case of transcriptions, the html might contain pb elements to indicate page breaks in the original */
-      pb:before {
-        content: " [page " attr(n) "] ";
-        font-size: 0.8em;
-        color:#959595;
-        vertical-align: top;
-        position: relative;
-        display: inline-block;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-      }
-      
-      /* navigation */
-      nav {
-        display: block;
-        position: fixed;
-        top: 0px;
-        width: 300px;
-        height: 100%;
-        transition: 0.5s;
-        /*background-color: #E3DFE0;*/
-        z-index: 100;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 0.8em;
-        text-align: left;
-      }
-      
-      nav {
-        left: -320px;
-      }
-      nav,
-      nav:before {
-        /*background-color: #F0ECEC;*/
-        background-color:#AB1733; 
-      }
-      nav *,
-      nav:before {
-        color:white;
-      }
-      nav a:visited,
-      nav a:hover,
-      nav a:active {
-        color:white;
-        text-decoration: none;
-      }
-      /* add button */
-      nav:before {
-        display: block;
-        width: 45px;
-        height: 40px;
-        position: fixed;
-        left: -5px;
-        top: 20px;
-        content: "\2261";
-        font-size: 40px;
-        /*background-color: #E3DFE0;*/
-        /*border-bottom-left-radius: 5px;*/
-        border-bottom-right-radius: 5px;
-        /*border-top-left-radius: 5px;*/
-        border-top-right-radius: 5px;
-        box-sizing: border-box;
-        cursor: pointer;
-        padding-bottom: 5px;
-        padding-left: 15px;
-        padding-right: 10px;
-        padding-top: 5px;
-        transition: 0.5s;
-      }
-      /*hover state*/
-      nav:hover {
-        left: 0px;
-        top: 0px;
-      }
-      nav:hover:before {
-        left: 315px;
-      }
-      nav ul,
-      nav li {
-        list-style: none;
-        padding-top: 0.5em;
-        padding-bottom: 0;
-        /*margin-top: 10px;*/
-        line-height: 1.5em;
-        margin-block-start:0;
-      }
-      /* footer and header */
-      footer {
-        border-top: 1px solid black;
-        padding-top: 5px;
-        /*fixed display at the bottom of the page */
-        display: block;
-        position: fixed;
-        bottom: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
-        left: 0px;
-        width: 100%;
-        height: 30px;
-        font-family: "Source Sans Pro",sans-serif;
-        font-size: 16px;
-      }
-      footer * {
-        background-color: inherit;
-        font-family: inherit;
-        font-size: inherit;
-        margin-top:0px;
-        margin-bottom: 0px;
-      }
-      span.c_info {
-        display: block;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      footer img {
-        display: inline;
-        background-color: inherit;
-        border-radius: 0px;
-        box-shadow: none;
-        border:none;
-        margin-left: 5px;
-        margin-right: 5px;
-      }
-      span.c_license img {
-        width: 60px;
-      }
-      
-      /* show urls in print */
-      @media print {
-        a[href]:after {
-          content: " (" attr(href) ") ";
+        /* general settings for the whole page */
+       body,
+       footer,
+       header {
+          display: block;
+          background-color: white;
+          color: black;
         }
-      }
-  </style>
+        body {
+          /*font-family: Helvetica, Arial, sans-serif;*/
+          font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+          font-size: 18px;
+          line-height: 1.5em;
+          text-align: justify;
+          margin-left: auto;
+          margin-right: auto;
+          padding-right: 60px;
+          padding-left: 60px;
+          max-width: 800px;
+          min-width: 300px;
+          word-wrap: break-word;
+          /* counters */
+          counter-reset: p;
+        }
+        /* automatic numbering */
+        body > p{
+          counter-increment: p;
+        }
+        body > p:before {
+          content: "§ " counter(p) " ";
+          direction:ltr;
+          vertical-align:top;
+          font-size: 0.8em;
+          color: gray;
+          display: inline-block;
+          position: relative;
+          left: -60px;
+        }
+        /* section headings */
+        h1, h2, h3, h4, h5 {
+          font-family: "American Typewriter", sans-serif;
+          font-weight: lighter;
+          margin-top: 1em;
+          line-height: 1.2em;
+          text-align: center;
+        }
+        
+        /* spacing / padding between paragraphs */
+        p, ol, ul, li {
+          /*margin-left: 1em;*/
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+          line-height: 1.5em;
+        }
+        div.footnotes p {
+          padding-bottom: 0;
+          padding-top: 0;
+        }
+        /* code */
+        code {
+          font-size: 14px;
+          line-height: 1;
+          padding-bottom: 0;
+          padding-top: 0;
+        }
+        
+        /* images */
+        
+        img {
+          width: 80%;
+          display: block;
+          margin-left: 10%;
+          margin-top: 1em;
+          background-color: rgba(0,0,0,0.04);
+          border-radius: 15px;
+          box-shadow: 2px 2px 5px #000;
+          border:gray solid 1px;
+        }
+        
+        /* what about captions? */
+        /* they are provided in @alt (inline images) and <figcaption/> (images separated by empty lines) */
+        /* if I render HMTL with Pandoc and Marked, images are rendered as <div class="figure">
+        <img src="img0030.jpg" alt="Fig. 1, Construction works at the new municipality." /><p class="caption">Fig. 1, Construction works at the new municipality.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+        </div>
+        */
+        figure, 
+        div.figure {
+          width: 80%;
+          display: block;
+          clear: both;
+          margin-top: 1em;
+          margin-left: 10%;
+        }
+        figure > img, 
+        div.figure img {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          position: relative;
+          background-color: rgba(0,0,0,0.04);
+          border-radius: 15px;
+          box-shadow: 2px 2px 5px #000;
+          border:gray solid 1px;
+        }
+        figcaption,
+        p.caption {
+          width:100%;
+          position:relative;
+          display: block;
+          margin-top: 1em;
+          font-size:0.8em;
+          text-align: right;
+          font-weight:lighter;
+        }   
+        
+        /* tables */
+        table {
+          display: block;
+          width:inherit;
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: inherit;
+          padding-bottom: inherit;
+          border-collapse: collapse;
+          /* use smaller font-size than the surrounding text*/
+          font-size: 0.7em;
+        }
+        
+        tr.header {
+          border-bottom: double black;
+        }
+        tr {
+          border-bottom: 1px solid black;
+        }
+        th,
+        td {
+          text-align: left;
+          padding-bottom: 0.1em;
+          padding-top: 0.1em;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
+        }
+        
+        /* links */
+        a {
+          color: orange;
+          text-decoration: none;
+        }
+        
+        a:visited {
+          color: #AB1733;
+          text-decoration: none;
+        }
+        
+        a:hover, a:active {
+          color: #E62347;
+          text-decoration: underline;
+        }
+        /* footnotes */
+        a.footnote {
+          font-size: 0.7em;
+          vertical-align: super;
+          display: inline-block;
+          padding-left: 0.3em;
+        }
+        /* in case of transcriptions, the html might contain pb elements to indicate page breaks in the original */
+        pb:before {
+          content: " [page " attr(n) "] ";
+          font-size: 0.8em;
+          color:#959595;
+          vertical-align: top;
+          position: relative;
+          display: inline-block;
+          margin-left: 0.5em;
+          margin-right: 0.5em;
+        }
+        
+        /* navigation */
+        nav {
+          display: block;
+          position: fixed;
+          /* vertical scrolling */
+          overflow-y: auto;
+          top: 0px;
+          width: 300px;
+          height: 100%;
+          transition: 0.5s;
+          /*background-color: #E3DFE0;*/
+          z-index: 100;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-size: 0.8em;
+          text-align: left;
+        }
+        
+        nav {
+          left: -320px;
+        }
+        nav,
+        nav:before {
+          /*background-color: #F0ECEC;*/
+          background-color:#AB1733; 
+        }
+        nav *,
+        nav:before {
+          color:white;
+        }
+        nav a:visited,
+        nav a:hover,
+        nav a:active {
+          color:white;
+          text-decoration: none;
+        }
+        /* add button */
+        nav:before {
+          display: block;
+          width: 45px;
+          height: 40px;
+          position: fixed;
+          left: -5px;
+          top: 20px;
+          content: "\2261";
+          font-size: 40px;
+          /*background-color: #E3DFE0;*/
+          /*border-bottom-left-radius: 5px;*/
+          border-bottom-right-radius: 5px;
+          /*border-top-left-radius: 5px;*/
+          border-top-right-radius: 5px;
+          box-sizing: border-box;
+          cursor: pointer;
+          padding-bottom: 5px;
+          padding-left: 15px;
+          padding-right: 10px;
+          padding-top: 5px;
+          transition: 0.5s;
+        }
+        /*hover state*/
+        nav:hover {
+          left: 0px;
+          top: 0px;
+        }
+        nav:hover:before {
+          left: 315px;
+        }
+        nav ul,
+        nav li {
+          list-style: none;
+          padding-top: 0.5em;
+          padding-bottom: 0;
+          /*margin-top: 10px;*/
+          line-height: 1.5em;
+          /*margin-block-start:0;*/
+        }
+        nav ol,
+        nav ul {
+          margin-block-start:0;
+          margin-block-end:0;
+          /* add indention of nested lists */
+          padding-inline-start:20px;
+        }
+        /* footer and header */
+        footer {
+          border-top: 1px solid black;
+          padding-top: 5px;
+          /*fixed display at the bottom of the page */
+          display: block;
+          position: fixed;
+          bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          left: 0px;
+          width: 100%;
+          height: 30px;
+          font-family: "Source Sans Pro",sans-serif;
+          font-size: 16px;
+        }
+        footer * {
+          background-color: inherit;
+          font-family: inherit;
+          font-size: inherit;
+          margin-top:0px;
+          margin-bottom: 0px;
+        }
+        span.c_info {
+          display: block;
+          padding-left: 5px;
+          padding-right: 5px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        footer img {
+          display: inline;
+          background-color: inherit;
+          border-radius: 0px;
+          box-shadow: none;
+          border:none;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        span.c_license img {
+          width: 60px;
+        }
+        
+        /* show urls in print */
+        @media print {
+          a[href]:after {
+            content: " (" attr(href) ") ";
+          }
+        }
+    </style>
   <style type="text/css">
   /* these styles mirror oXygen's highlight colours for XML */
   pre.sourceCode {
@@ -386,6 +402,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </header>
 <nav id="TOC">
 <ul>
+<li><a href="#sec-about">About</a></li>
+<li><a href="#introduction">[Introduction]</a></li>
 <li><a href="#sec-sources">1. Starting from a database of sources</a></li>
 <li><a href="#sec-locations">2. Establishing a list of geocoded locations</a><ul>
 <li><a href="#extracting-the-toponyms-and-organizing-a-hierarchy-of-places">2.1 Extracting the toponyms and organizing a hierarchy of places</a></li>
@@ -400,10 +418,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#bibliography">Bibliography</a></li>
 </ul>
 </nav>
-<blockquote>
+<h1 id="sec-about">About</h1>
 <p>This paper was published as “Mapping Ottoman Damascus Through News Reports: A Practical Approach,” in <em>Digital Humanities and Islamic &amp; Middle East Studies</em>, ed. Elias Muhanna (Boston, Berlin: De Gruyter, 2015), pp. 175–198.</p>
-</blockquote>
-<!-- # Introduction -->
+<p>To comment / review / annotate this paper via hypothes.is click <a href="https://via.hypothes.is/https://rawgit.com/tillgrallert/pee31249a/gh-pages/index.html">here</a></p>
+<h1 id="introduction">[Introduction]</h1>
 <p><pb n="175"/> This paper introduces a digital workflow and a set of tools to visually scrutinize possible correlations between certain historical phenomena, discourse, and terminologies on the one hand, and geographical locations on the other by means of browser-based maps that require only minimal prior programming knowledge. The workflow provides historians with a means to quickly check whether references to certain events or certain terms within a large corpus of sources form clusters on a geographic map—as long as the information is available in a somewhat structured and machine-readable form, such as a reference or citation manager.</p>
 <p>While the workflow can be applied to scrutinize the distribution of fires, crimes or road works, it was developed in response to a practical, methodological question of how to investigate the extent to which Damascene and Beiruti newspapers—and particularly the news reports from and about Damascus during the last forty years of Ottoman rule (1875–1914)—perpetuated the state’s discourse on the provision of public order (<em>āsāyış-i ʿumūmī</em> / <em>rāḥat ʿumūmiyya</em>) for generating legitimate Ottoman statehood. Such a study of linguistic strategies used to delegitimize acts of violence and the perpetrators thereof required a methodology to deal with thousands of newspaper articles from seven newspapers of at least weekly publication and six monthly or fortnightly journals. In the course of two years that I spent reading these newspapers for a doctoral thesis on the production of public places and public space in late Ottoman Damascus, I had increasingly come under the impression that a specific terminology for violent challenges to legitimate Ottoman statehood—such as <em>mushājara</em> (quarrel), <em>munāzaʿa</em> (riot) or <em>ashqiyāʾ</em> (pl. of <em>shaqī</em>, brigand, rascal, wretch) and their derivatives—tended to cluster around specific areas in the city of Damascus as well as in the larger Province of Syria. After submitting my thesis, I wanted to further scrutinize this impression. But how could I systematically test this hypothesis for a large number of terms without sieving through all the newspaper articles again and without manually locating every relevant toponym on paper maps?</p>
 <p>In the perfect world of infinite resources and skills, one would already have a fully coded database of individual historical events and machine-readable transcriptions of sources. In such a case, qualitative coding, semantic and linguistic mark-up of mono-thematic chunks of information, or a combination of both would have already established the link between the historical criteria of <pb n="176"/> interest and geographic locations. Toponyms would function as placeholders for locational data on latitude and longitude stored in a second database. Integrated into a Geographic Information System (GIS), most analytical queries could be readily displayed and printed. However, in the real world of the humanities and particularly the field of Middle East studies, we encounter individuals with limited access to resources toiling away in isolation from other researchers as the most common case. As a result, we have to work with partially and inconsistently coded heterogeneous data in databases, most often some sort of reference managing software, whose smallest unit are individual sources instead of events—if we have machine-readable data at all.</p>
