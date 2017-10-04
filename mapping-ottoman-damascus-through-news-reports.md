@@ -11,9 +11,15 @@ markdown:
 include-after: <footer><span class="c_info c_license"><a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.</span></footer>
 ---
 
->This paper was published as "Mapping Ottoman Damascus Through News Reports: A Practical Approach," in *Digital Humanities and Islamic & Middle East Studies*, ed. Elias Muhanna (Boston, Berlin: De Gruyter, 2015), pp. 175--198.
 
-<!-- # Introduction -->
+# About {#sec-about}
+
+This paper was published as "Mapping Ottoman Damascus Through News Reports: A Practical Approach," in *Digital Humanities and Islamic & Middle East Studies*, ed. Elias Muhanna (Boston, Berlin: De Gruyter, 2015), pp. 175--198.
+
+To comment / review / annotate this paper via hypothes.is click [here](https://via.hypothes.is/https://rawgit.com/tillgrallert/name-of-repository/gh-pages/index.html)
+
+# [Introduction]
+
 <pb n="175"/>
 This paper introduces a digital workflow and a set of tools to visually scrutinize possible correlations between certain historical phenomena, discourse, and terminologies on the one hand, and geographical locations on the other by means of browser-based maps that require only minimal prior programming knowledge. The workflow provides historians with a means to quickly check whether references to certain events or certain terms within a large corpus of sources form clusters on a geographic map---as long as the information is available in a somewhat structured and machine-readable form, such as a reference or citation manager.
 
