@@ -376,17 +376,14 @@ A spatial analysis of the discourse on violence reveals insights into the making
 
 # Bibliography
 
-Ayalon, Ami. *The Press in the Arab Middle East: A History*. New York: Oxford University Press, 1995.
+- Ayalon, Ami. *The Press in the Arab Middle East: A History*. New York: Oxford University Press, 1995.
+- Grallert, Till. "To Whom Belong the Streets? Property, Propriety, and Appropriation: The Production of Public Space in Late Ottoman Damascus, 1875-1914." unpublished PhD diss., FU Berlin, Apr 2014.
+- al-Mallūḥī, Mihyār ʿAdnān. *Muʿjam al-jarāʾid al-sūriyya 1865-1965*. Dimashq, 2002.
+- Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung über die osmanische Reformpolitik im 19. Jahrhundert*. München: Oldenbourg, 2005.
+- Ṭarrāzī, Fīlīb Dī. *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā akhbār kull jarīda wa-majalla ʿarabiyya ẓaharat fī al-ʿālam sharqiyyan wa-gharbiyyan maʿa rusūm aṣḥābihā wa-l-muḥarrirīn fīhā wa-tarājim mashāhīrihim*. Vols. 1–3. Bayrūt: al-Maṭbaʿa al-adabiyya, 1913–14.
+- ---. *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā jamīʻ fahāris al-jarāʾid wa-l-majallāt al-ʿarabiyya fī al-khāfiqīn mudh takwīn al-ṣiḥāfa al-ʿarabiyya ilā nihāyat ʿām 1929*. Vol. 4. Bayrūt: al-Maṭbaʿa al-amīrikāniyya, 1933.
 
-Grallert, Till. "To Whom Belong the Streets? Property, Propriety, and Appropriation: The Production of Public Space in Late Ottoman Damascus, 1875-1914." unpublished PhD diss., FU Berlin, Apr 2014.
-
-al-Mallūḥī, Mihyār ʿAdnān. *Muʿjam al-jarāʾid al-sūriyya 1865-1965*. Dimashq, 2002.
-
-Reinkowski, Maurus. *Die Dinge der Ordnung: eine vergleichende Untersuchung über die osmanische Reformpolitik im 19. Jahrhundert*. München: Oldenbourg, 2005.
-
-Ṭarrāzī, Fīlīb Dī. *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā akhbār kull jarīda wa-majalla ʿarabiyya ẓaharat fī al-ʿālam sharqiyyan wa-gharbiyyan maʿa rusūm aṣḥābihā wa-l-muḥarrirīn fīhā wa-tarājim mashāhīrihim*. Vols. 1–3. Bayrūt: al-Maṭbaʿa al-adabiyya, 1913–14.
-
----. *Tārīkh al-ṣiḥāfa al-ʿarabiyya: Yaḥtawī ʿalā jamīʻ fahāris al-jarāʾid wa-l-majallāt al-ʿarabiyya fī al-khāfiqīn mudh takwīn al-ṣiḥāfa al-ʿarabiyya ilā nihāyat ʿām 1929*. Vol. 4. Bayrūt: al-Maṭbaʿa al-amīrikāniyya, 1933.
+# Notes 
 
 [^1]: For the current specifications of the Extensible Markup Language (XML), Extensible Stylesheet Language Transformations (XSLT), and the XPath data model see <http://www.w3.org/TR/xml11/>, <http://www.w3.org/TR/xslt20/>, and <http://www.w3.org/TR/xpath-datamodel/>. For the specification of the JavaScript Object Notation (JSON) see <http://www.json.org/>. For the latest specifications of the Hypertext Markup Language (HTML) and Cascading Style Sheets (CSS) see <http://www.w3.org/TR/html/> and <http://www.w3.org/TR/CSS2/>. For Exhibit 3.0 see <http://simile-widgets.org/exhibit/> and section 4 below.
 
